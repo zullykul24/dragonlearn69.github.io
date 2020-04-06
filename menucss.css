@@ -1,0 +1,28 @@
+#header {
+    text-align: center;
+    height: 100px;
+    
+    
+}
+p {
+    font-size: 30px;
+}
+#content {
+   
+}
+a:hover {
+    color: red;
+}
+#icon1 {
+    float: left;
+    width: 500px;
+    height: 500px;
+
+    margin-left: 250px;
+}
+#icon2 {
+    float: left;
+    width: 500px;
+    height: 500px;
+  
+}

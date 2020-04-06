@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Writing numbers from assigned place value</title>
+    <link href="maincss.css" rel="stylesheet">
+</head>
+<body>
+    <script>
+        var count = 0;
+        var i = 0;
+        var numbers1_arr = ["359", "826", "274", "618", "487"];
+        var numbers2_arr = ["350", "820", "204", "18", "407"] ;
+        var numbers3_arr = ["59", "806", "74", "610", "480"];
+        var question1_arr = [
+            "3 hundreds, 9 units, 5 tens:",
+            "6 units, 8 hundreds, 2 tens:",
+            "7 tens, 4 units, 2 hundreds:",
+            "8 units, 1 ten, 6 hundreds:",
+            "8 tens, 4 hundreds, 7 units:"
+        ];
+        var question2_arr = [
+            "5 tens and 3 hundreds:",
+            "8 hundreds and 2 tens:",
+            "4 units and 2 hundreds:",
+            "1 ten and 8 units",
+            "4 hundreds and 7 units"
+            ];
+        var question3_arr = [
+            "9 units and 5 tens:",
+            "6 units and 8 hundreds:",
+            "7 tens and 4 units:",
+            "6 hundreds and 1 ten",
+            "8 tens and 4 hundreds"
+            ];
+        
+        function check_1(x)
+        {
+            var input1 = document.getElementById("input_1").value;
+            var message = document.getElementById("message_1");
+            if(input1 == x){
+               message.innerHTML = "Excellent!";
+               message.style.color = "blue";
+               count++;
+            }
+            else if(input1 == ""){
+                message.innerHTML = "Write your answer";
+                message.style.color = "red";
+                }
+            else{
+                message.innerHTML = "Wrong answer";
+                message.style.color = "red";
+            }
+        }
+        function check_2(x)
+        {
+            var input2 = document.getElementById("input_2").value;
+            var message = document.getElementById("message_2");
+            if(input2 == x){
+               message.innerHTML = "Excellent!";
+               message.style.color = "blue";
+               count++;
+            }
+            else if(input2 == ""){
+                message.innerHTML = "Write your answer";
+                message.style.color = "red";
+                }
+            else{
+                message.innerHTML = "Wrong answer";
+                message.style.color = "red";
+            }
+        }
+        function check_3(x)
+        {
+            var input3 = document.getElementById("input_3").value;
+            var message = document.getElementById("message_3");
+            if(input3 == x){
+               message.innerHTML = "Excellent!";
+               message.style.color = "blue";
+               count++;
+            }
+            else if(input3 == ""){
+                message.innerHTML = "Write your answer";
+                message.style.color = "red";
+                }
+            else{
+                message.innerHTML = "Wrong answer";
+                message.style.color = "red";
+            }
+        }
+        function next(){
+            var input1 = document.getElementById("input_1");
+            var input2 = document.getElementById("input_2");
+            var input3 = document.getElementById("input_3");
+            var question1 = document.getElementById("question1");
+            var question2 = document.getElementById("question2");
+            var question3 = document.getElementById("question3");
+            var message_1 = document.getElementById("message_1");
+            var message_2 = document.getElementById("message_2");
+            var message_3 = document.getElementById("message_3");
+            var part_arr = ["part_1", "part_2", "part_3", "part_4"];
+            input1.value = "";
+            input2.value = "";
+            input3.value = "";
+            message_1.innerHTML = "";
+            message_2.innerHTML = "";
+            message_3.innerHTML = "";
+
+            
+            var next_link = document.getElementById("next_link");
+            next_link.innerHTML = "";
+
+
+            question1.innerHTML = question1_arr[i+1];
+            question2.innerHTML = question2_arr[i+1];
+            question3.innerHTML = question3_arr[i+1];
+            i++;
+
+            document.getElementById(part_arr[i-1]).style.backgroundColor = "red";
+            
+            
+
+            
+        }
+        function commit(){
+            
+            var next_link = document.getElementById("next_link");
+            if(count % 3 == 0 && count <= 12 && count >0){
+                next_link.innerHTML = "Next";
+            }
+            if(count == 15)next_link.innerHTML = "Finish";
+        }
+        function check_finish(){
+        var next_link = document.getElementById("next_link");
+        if(next_link.innerHTML == "Finish"){
+                next_link.onclick = function(){
+                    location.href = "menu.html";
+                }
+            }
+        }
+        
+    </script>
+    <div class="mainbox">
+    <div class="headbox">
+        <div class="back">
+            <a href="menu.html">Back</a>
+        </div>
+        <div class="rightbar">
+            <div class="progress">
+                <div id="part_1"></div>
+                <div id="part_2"></div>
+                <div id="part_3"></div>
+                <div id="part_4"></div> 
+            </div>
+        </div>
+        <div class="next" >
+            <p id="next_link" onclick="next()" style="cursor: pointer; width: 100px; height: 40px; 
+            margin-top: 3px; font-weight: bold; color: blue; "></p>
+        </div>
+    </div>
+    <div class="contentncap">
+        <div class="caption">Type the number which has</div>
+        <div class="content">
+            <div class="line">
+                <div class="question" id="question1">3 hundreds, 9 units, 5 tens:</div>
+                <div class="answer">
+                    <div class="check_input">
+                        <input type="text" value="" id="input_1" style="width: 100px;">
+                        <input type="submit" value="check" onclick="check_1(numbers1_arr[i])">
+                    </div>
+                    <div class ="message" id="message_1"></div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="question" id="question2">5 tens and 3 hundreds:</div>
+                <div class="answer">
+                    <div class="check_input">
+                        <input type="text" value="" id="input_2" style="width: 100px;">
+                        <input type="submit" value="check" onclick="check_2(numbers2_arr[i])">
+                    </div>
+                    <div class ="message" id="message_2"></div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="question" id="question3" >9 units and 5 tens:</div>
+                <div class="answer">
+                    <div class="check_input">
+                        <input type="text" value="" id="input_3" style="width: 100px;">
+                        <input type="submit" value="check" onclick="check_3(numbers3_arr[i]); commit();check_finish();" >
+                    </div>
+                    <div class ="message" id="message_3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div> 
+</body>
+</html>
