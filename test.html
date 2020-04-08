@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #container {
+            width: 600px;
+            height: 60px;
+            position: relative;
+            background: yellow;
+        }
+        #animate_1 {
+            width: 60px;
+            height: 60px;
+            float: left;
+            position: relative;
+          
+            background: url("Picture/ball.png"), no-repeat, center;
+        }
+        #animate_2 {
+            width: 60px;
+            height: 60px;
+            float: left;
+            position: relative;
+          
+            background: url("Picture/ball.png"), no-repeat, center;
+        }
+        #animate_3 {
+            width: 60px;
+            height: 60px;
+            float: left;
+            position: relative;
+          
+            background: url("Picture/ball.png"), no-repeat, center;
+        }
+    </style>
+    <body>
+        <p><button onclick="addPoint()">Click me to go</button></p>
+        <p><button onclick="subPoint()">Go back</button></p>
+        <div id="container">
+            <div class="animate" id="animate_1"></div>
+            <div class="animate" id="animate_2"></div>
+            <div class="animate" id="animate_3"></div>
+        </div>
+        <script>
+            var animate_arr = ["animate_1", "animate_2", "animate_3"];
+            var pos = 0;
+            var point = 0;
+            const numberofball = 3;
+            function addPoint()
+            {
+                var ele = document.getElementById(animate_arr[numberofball-1-point]);
+                var id = setInterval(frame, 20);
+                function frame(){
+                    if (pos == 420){
+                      clearInterval(id);
+                    } else {
+                        ele.style.left = pos + "px";
+                        pos++;
+                    }
+                }
+                point++;
+                pos = 0;
+            }
+            function subPoint()
+            {
+                var ele = document.getElementById(animate_arr[numberofball-point]);
+                var id = setInterval(frame, 20);
+                function frame(){
+                    if(pos == 0){
+                        clearInterval(id);
+                    } else {
+                        ele.style.left = pos + "px";
+                        pos--;
+                    }
+                }
+                point--;
+                pos = 420;
+            }
+        </script>
+    </body>
+</html>
