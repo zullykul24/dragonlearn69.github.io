@@ -51,31 +51,14 @@ body {
     margin-left: 100px;
     margin-top: 5px;
     background-color: #ededed;
+    position: relative;
 }
-#part_1 {
+.ball {
     height: 40px;
-    width: 140px;
+    width: 40px;
     float: left;
-   
- 
-}
-#part_2 {
-    height: 40px;
-    width: 140px;
-    float: left;
-
-}
-#part_3 {
-    height: 40px;
-    width: 140px;
-    float: left;
-
-}
-#part_4 {
-    height: 40px;
-    width: 140px;
-    float: left;
- 
+    position: relative;
+    background: url("Picture/ball.png"), no-repeat, center ;
 }
 .contentncap {
     padding-top: 10px;
