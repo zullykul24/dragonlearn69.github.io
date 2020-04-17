@@ -7,7 +7,7 @@
             position: relative;
             background: yellow;
         }
-        #animate_1 {
+        .animate {
             width: 60px;
             height: 60px;
             float: left;
@@ -15,22 +15,7 @@
           
             background: url("Picture/ball.png"), no-repeat, center;
         }
-        #animate_2 {
-            width: 60px;
-            height: 60px;
-            float: left;
-            position: relative;
-          
-            background: url("Picture/ball.png"), no-repeat, center;
-        }
-        #animate_3 {
-            width: 60px;
-            height: 60px;
-            float: left;
-            position: relative;
-          
-            background: url("Picture/ball.png"), no-repeat, center;
-        }
+     
     </style>
     <body>
         <p><button onclick="addPoint()">Click me to go</button></p>
@@ -50,7 +35,7 @@
                 var ele = document.getElementById(animate_arr[numberofball-1-point]);
                 var id = setInterval(frame, 20);
                 function frame(){
-                    if (pos == 420){
+                    if (pos == 420){ // 600 - 180
                       clearInterval(id);
                     } else {
                         ele.style.left = pos + "px";
