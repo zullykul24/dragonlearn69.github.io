@@ -6,7 +6,8 @@
     <link href="game1.css" rel="stylesheet">
 </head>
 <body>
-    <script type="text/javascript" src="game1.js">
+    <script type="text/javascript" src="../Game1/game1.js">
+    var i = 0;
         
     </script>
     <div class="mainbox">
@@ -36,7 +37,7 @@
                 <div class="answer">
                     <div class="check_input">
                         <input type="text" value="" id="input_1" style="width: 100px;"> 
-                        <input type="submit" value="check" onclick="check_1(numbers1_arr[i]); commit(); check_finish();"> <!-- Click to check the answer-->
+                        <input type="submit" value="check" onclick="check_1(numbers1_arr[lesson]); commit(); check_finish();"> <!-- Click to check the answer-->
                     </div>
                     <div class ="message" id="message_1"></div>
                 </div>
@@ -46,7 +47,7 @@
                 <div class="answer">
                     <div class="check_input">
                         <input type="text" value="" id="input_2" style="width: 100px;">
-                        <input type="submit" value="check" onclick="check_2(numbers2_arr[i]); commit(); check_finish();">
+                        <input type="submit" value="check" onclick="check_2(numbers2_arr[lesson]); commit(); check_finish();">
                     </div>
                     <div class ="message" id="message_2"></div>
                 </div>
@@ -56,7 +57,7 @@
                 <div class="answer">
                     <div class="check_input">
                         <input type="text" value="" id="input_3" style="width: 100px;">
-                        <input type="submit" value="check" onclick="check_3(numbers3_arr[i]); commit();check_finish();" >
+                        <input type="submit" value="check" onclick="check_3(numbers3_arr[lesson]); commit();check_finish();" >
                     </div>
                     <div class ="message" id="message_3"></div>
                 </div>
