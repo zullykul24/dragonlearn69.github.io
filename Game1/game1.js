@@ -137,7 +137,7 @@
         var next_link = document.getElementById("next_link");
         if(next_link.innerHTML == "Finish"){
                 next_link.onclick = function(){
-                    location.href = "menu.html"; //Click finish to go to menu
+                    location.href = "../menu.html"; //Click finish to go to menu
                 }
             }
         }
