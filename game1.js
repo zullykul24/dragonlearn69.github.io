@@ -1,7 +1,9 @@
-        var count = 0;
-        var i = 0; 
+        var count = 0; ///count the completed questions
+        var lesson = 0; 
+        const numberOfLessons = 5;
         var check_subPoint = 0;
-        var rightBalls = 0;
+        var trueAnswer = 0;
+        var rightBalls = 0; // count the right balls
         var numbers1_arr = ["359", "826", "274", "618", "487"]; // chưa tối ưu, nên cho array
         var numbers2_arr = ["350", "820", "204", "18", "407"] ;
         var numbers3_arr = ["59", "806", "74", "610", "480"];
@@ -34,7 +36,7 @@
             if(input1 == x){    //True answer
                message.innerHTML = "Excellent!"; 
                message.style.color = "blue";
-               count++;
+               trueAnswer++;
             }
             else if(input1 == ""){ //No answer
                 message.innerHTML = "Write your answer";
@@ -54,7 +56,7 @@
             if(input2 == x){
                message.innerHTML = "Excellent!";
                message.style.color = "blue";
-               count++;
+               trueAnswer++;
             }
             else if(input2 == ""){
                 message.innerHTML = "Write your answer";
@@ -74,7 +76,7 @@
             if(input3 == x){
                message.innerHTML = "Excellent!"; 
                message.style.color = "blue";
-               count++;
+               trueAnswer++;
             }
             else if(input3 == ""){
                 message.innerHTML = "Write your answer";
@@ -92,13 +94,17 @@
             var input1 = document.getElementById("input_1");
             var input2 = document.getElementById("input_2");
             var input3 = document.getElementById("input_3");
+
+
             var question1 = document.getElementById("question1");
             var question2 = document.getElementById("question2");
             var question3 = document.getElementById("question3");
+
+
             var message_1 = document.getElementById("message_1");
             var message_2 = document.getElementById("message_2");
             var message_3 = document.getElementById("message_3");
-            var part_arr = ["part_1", "part_2", "part_3", "part_4"];
+
             input1.value = "";
             input2.value = "";
             input3.value = ""; // clear inputs
@@ -112,22 +118,20 @@
             next_link.innerHTML = ""; // Next button disappears 
 
 
-            question1.innerHTML = question1_arr[i+1];
-            question2.innerHTML = question2_arr[i+1];
-            question3.innerHTML = question3_arr[i+1];
-            i++;
-
-           // document.getElementById(part_arr[i-1]).style.backgroundColor = "red";
-  
+            question1.innerHTML = question1_arr[lesson+1];
+            question2.innerHTML = question2_arr[lesson+1];
+            question3.innerHTML = question3_arr[lesson+1];
+            lesson++;
         }
         function commit(){  //When u give 3 true answers, the Next button appears 
             
             var next_link = document.getElementById("next_link");
-            if(count % 3 == 0 && count <= 12 && count >0){
+            if(trueAnswer == 3 && lesson < numberOfLessons - 1){
                 if(check_subPoint == 0)addPoint();
                 next_link.innerHTML = "Next";
+                trueAnswer = 0;
             }
-            if(count == 15)next_link.innerHTML = "Finish"; // Finish all questions of lessons
+            if(lesson == (numberOfLessons - 1) && trueAnswer == 3)next_link.innerHTML = "Finish"; // Finish all questions of lessons
         }
         function check_finish(){  //Check when u finish all lessons
         var next_link = document.getElementById("next_link");

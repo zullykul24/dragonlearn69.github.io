@@ -1,5 +1,6 @@
 body {
-    background: url("Picture/bg.jpeg");
+    background: url("Picture/numbers.jpg") repeat;
+   
     font-family: sans-serif;
 }
 .mainbox {
@@ -50,15 +51,17 @@ body {
     width: 560px;
     margin-left: 100px;
     margin-top: 5px;
-    background-color: #ededed;
+    background-color: #f1dede;
     position: relative;
+    border-radius: 5px;
 }
 .ball {
     height: 40px;
     width: 40px;
     float: left;
     position: relative;
-    background: url("Picture/ball.png"), no-repeat, center ;
+    border-radius: 40px;
+    background-color: red;
 }
 .contentncap {
     padding-top: 10px;

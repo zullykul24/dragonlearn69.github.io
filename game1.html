@@ -12,7 +12,7 @@
     <div class="mainbox">
     <div class="headbox">
         <div class="back">
-            <a href="menu.html">Back</a>
+            <a href="menu.html" style="cursor: pointer; font-weight: bold; color: blue; text-decoration: none;">Back</a>
         </div>
         <div class="rightbar">
             <div class="progress">
@@ -34,13 +34,13 @@
     </div>
     <div class="contentncap">
         <div class="caption">Type the number which has</div>
-        <div class="content">                                           <!-- pó tay.com đíu hiểu-->
+        <div class="content">                                          
             <div class="line">
                 <div class="question" id="question1">3 hundreds, 9 units, 5 tens:</div>
                 <div class="answer">
                     <div class="check_input">
-                        <input type="text" value="" id="input_1" style="width: 100px;">
-                        <input type="submit" value="check" onclick="check_1(numbers1_arr[i])"> <!-- Click to check the answer-->
+                        <input type="text" value="" id="input_1" style="width: 100px;"> 
+                        <input type="submit" value="check" onclick="check_1(numbers1_arr[i]); commit(); check_finish();"> <!-- Click to check the answer-->
                     </div>
                     <div class ="message" id="message_1"></div>
                 </div>
@@ -50,7 +50,7 @@
                 <div class="answer">
                     <div class="check_input">
                         <input type="text" value="" id="input_2" style="width: 100px;">
-                        <input type="submit" value="check" onclick="check_2(numbers2_arr[i])">
+                        <input type="submit" value="check" onclick="check_2(numbers2_arr[i]); commit(); check_finish();">
                     </div>
                     <div class ="message" id="message_2"></div>
                 </div>
