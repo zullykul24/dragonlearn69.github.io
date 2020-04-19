@@ -2,23 +2,33 @@ body {
     background: url("../Picture/numbers.jpg") repeat;
     font-family: sans-serif;
 }
-.column{
+.columnSpace{
     height: 550px;
     width: 480px;
     float: left;
-
-
+    background-color: red;
+    margin-top: 20px;
 }
-.ques2{
+.question2_2Space{
+    height: 550px;
+    width: 960px;
+    position: relative;
+    background-color: blue;
+}
+
+
+.question2_1Space{
     float: left;
     height: 550px;
     width: 480px;
+    text-align: center;
+
 
 
 
 }
 
-.cap2{
+.content2{
     height: 550px;
     width: 960px;
     position: relative;

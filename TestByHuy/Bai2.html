@@ -16,23 +16,24 @@
         </div>
         <div class="rightbar">
             <div class="progress">
-                <!--  <div class="ball" id="ball_1"></div> 
+               <!--   <div class="ball" id="ball_1"></div>
                 <div class="ball" id="ball_2"></div>
                 <div class="ball" id="ball_3"></div>
                 <div class="ball" id="ball_4"></div>
                 <div class="ball" id="ball_5"></div>
-                  -->
-                <canvas id="progressBar" width="560" height="40" ></canvas>
+                -->
+
+             <canvas id="progressBar" width="560" height="40" ></canvas>
 
             </div>
         </div>
         <div class="next" >
-            <p id="next_link" onclick="next()" style="cursor: pointer; width: 100px; height: 40px;
+            <p id="next_link" onclick="next1()" style="cursor: pointer; width: 100px; height: 40px;
             margin-top: 3px; font-weight: bold; color: blue; "></p>
         </div>
     </div>
-    <div class="cap2">
-        <div class="column">
+    <div id="content2" class="content2" >
+        <div id="columnSpace" class="columnSpace" >
             <!--       <div id="start" onclick="start()">start</div>
                    <button onclick="addColumn(3)">ADD COLUMN</button>
                    <button onclick="clearColumn()">CLEAR COLUMN</button>
@@ -40,16 +41,21 @@
             <div id="column"></div>
         </div>
 
-        <div class="ques2">
-            <div id="question"></div>
+        <div id="question2_1Space" class="question2_1Space" >
+            <div id="question" ></div>
 
-            Here there are <input type="text" value="" id="inp1" oninput="checkQuestion(1)" style="width: 30px;" maxlength="2"> tens -
-            which is the same as <input type="text" value="" id="inp2" oninput="checkQuestion(2)"  style="width: 30px;" maxlength="3"> units
+            Here there are <input type="text" value="" id="input1" oninput="checkQuestion1(1)" style="width: 30px;" maxlength="2"> tens -
+            which is the same as <input type="text" value="" id="input2" oninput="checkQuestion1(2)" style="width: 30px;" maxlength="3"> units
 
             <!-- tạo câu hỏi -->
 
 
         </div>
+
+        <div id="question2_2Space" style="display: none" class="question2_2Space">
+
+        </div>
+
 
 
     </div>

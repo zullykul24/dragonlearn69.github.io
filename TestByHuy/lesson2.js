@@ -6,33 +6,35 @@ var ctx = canvas.getContext("2d");
 ctx.fillStyle = "#FF0000";
 
 
-let question_tens = [           //  [previous column, added column]
+let questionVariable = [           //  [previous column, added column]
     [5,0],
     [8,2],
     [8,3],
     [9,3],
-    [9,1],
-    [8,4],
-
-]
-
-let indexX=0;                      // [index của question_tens]
+    [6,-1],                            // giai đoạn part 2,
+    [8,1],                            //-1 tượng trưng cho __ tens is the same as ___ units
+    [10,-1],                           // 1 tượng trưng cho __ units is the same as ___ tens
+    [16,1],
+    [13,-1],
+    [18,-1]
+];
+let indexX=0;                      // [index của questionVariable]
 let indexY=0;
 
-let check1=false;                   // [index câu hỏi 1]
-let check2=false;                   // [index câu hỏi 2]
+let check1_1=false;                   // [index câu hỏi 1]
+let check1_2=false;                   // [index câu hỏi 2]
 
 function start() {
-    ctx.fillRect(0,0,560*(indexX/(question_tens.length-1)),40);     // vẽ progress bar
+    ctx.fillRect(0,0,560*(indexX/(questionVariable.length-1)),40);     // vẽ progress bar
     ctx.strokeRect(0,0,560,40);
     if(indexY===0) {
 
         clearColumn();
     }
-    addColumn(question_tens[indexX][indexY]);
+    addColumn(questionVariable[indexX][indexY]);
 
 
-    addQuestion(question_tens[indexX][indexY]);
+    addQuestion(questionVariable[indexX][indexY]);
 }
 
 function clearColumn() {                                            // xóa các column trên bản đồ
@@ -43,9 +45,7 @@ function clearColumn() {                                            // xóa các
 
 }
 
-function preload() {
-    this.load.image("block","Picture/block.png");
-}
+
 
 function addColumn(number) {                                    // thêm column theo number
 
@@ -64,93 +64,118 @@ function addQuestion(number){                                   // thêm câu h�
 
     console.log('add '+number+' question');
 }
-function checkQuestion(index){                                  // check đáp án đúng chưa, nếu đúng rồi thì next màn
+function checkQuestion1(index){                                  // check đáp án đúng chưa, nếu đúng rồi thì next màn
     var number;
     if(indexY===0){
         if(index===1) {
-            number = question_tens[indexX][indexY];
+            number = questionVariable[indexX][indexY];
         }
         else if(index===2){
-            number = question_tens[indexX][indexY]*10;
+            number = questionVariable[indexX][indexY]*10;
         }
     }
     else if(indexY === 1){
         if(index===1){
-            number = question_tens[indexX][0] + question_tens[indexX][1];
+            number = questionVariable[indexX][0] + questionVariable[indexX][1];
         }
         else if(index === 2){
-            number = ( question_tens[indexX][0] + question_tens[indexX][1] )*10;
+            number = ( questionVariable[indexX][0] + questionVariable[indexX][1] )*10;
         }
     }
 
-
-
-
-
     if(index===1) {
-        var answer1 = document.getElementById("inp1").value;
+        var answer1 = document.getElementById("input1").value;
         if (answer1 == number) {
             console.log("dap an dung cau 1");
 
-            check1=true;
+            check1_1=true;
         } else {
             console.log("dap an sai cau 1");
 
             console.log("dap an dung cau 1 bang: " + number);
-            check1=false;
+            check1_1=false;
         }
     }
     else if(index===2) {
-        var answer2 = document.getElementById("inp2").value;
+        var answer2 = document.getElementById("input2").value;
         if (answer2 == number) {
             console.log("dap an dung cau 2");
 
-            check2 = true;
+            check1_2 = true;
         } else {
             console.log("dap an sai cau 2");
 
             console.log("dap an dung cau 2 bang: " + number);
-            check2 = false;
+            check1_2 = false;
         }
     }
-        if(check1 && check2){
-            document.getElementById("inp1").value='';
-            document.getElementById("inp2").value='';
+        if(check1_1 && check1_2){
+            document.getElementById("input1").value='';
+            document.getElementById("input2").value='';
 
-            check1=false;
-            check2=false;
-            next();
+            check1_1=false;
+            check1_2=false;
+            next1();
         }
 
 
 
 }
 function isOutOfQuestion(index){                                    // chuyển sang màn hình victory nhưng chưa làm
-    if(index>indexY)
+    if(indexX>questionVariable.length)
         return true;
     return false;
 }
 
-function next(){                                                    // next màn
+function deletePlatform1() {
+    document.getElementById("columnSpace").style.display="none";
+    document.getElementById("question2_1Space").style.display="none";
+    document.getElementById("question2_2Space").style.display="block";
 
-    if(indexY===1) {
-        indexX++;
-        indexY = 0;
-    }
-    else if(indexY===0){
-        indexY++;
-    }
+    console.log(document.getElementById("content2").childNodes);
+}
 
-    if(question_tens[indexX][indexY]===0){
-        indexX++;
-        indexY = 0;
+function next2() {
+    if(indexX===4){
+        deletePlatform1();
     }
 
-    start();
+
+
+
+}
+
+function next1(){                                                    // next màn
+
+    if(indexX>3){
+        next2();
+    }
+    else {
+
+        if (indexY === 1) {
+            indexX++;
+            indexY = 0;
+        }
+        else if (indexY === 0) {
+            indexY++;
+        }
+
+        if (questionVariable[indexX][indexY] === 0) {
+            indexX++;
+            indexY = 0;
+        }
+
+
+        if(indexX<=3){
+            start();
+        }
+
+    }
 }
 
 
 
 
 start();                                                        // start trước
+
 
