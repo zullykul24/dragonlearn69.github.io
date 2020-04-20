@@ -27,7 +27,7 @@
 
             </div>
         </div>
-        <div class="next" >
+        <div class="next" ><!-------------------------------------------------------------------------------------------->
             <p id="next_link" onclick="next1()" style="cursor: pointer; width: 100px; height: 40px;
             margin-top: 3px; font-weight: bold; color: blue; "></p>
         </div>
@@ -44,15 +44,27 @@
         <div id="question2_1Space" class="question2_1Space" >
             <div id="question" ></div>
 
-            Here there are <input type="text" value="" id="input1" oninput="checkQuestion1(1)" style="width: 30px;" maxlength="2"> tens -
-            which is the same as <input type="text" value="" id="input2" oninput="checkQuestion1(2)" style="width: 30px;" maxlength="3"> units
-
+            <p>
+                Here there are <input class="inputBox1" id="input1" oninput="checkQuestion1(1)"   maxlength="2"> tens -
+            </p>
+            <p>
+                which is the same as <input class="inputBox2" id="input2" oninput="checkQuestion1(2)" maxlength="3"> units
+            </p>
             <!-- tạo câu hỏi -->
 
 
         </div>
 
         <div id="question2_2Space" style="display: none" class="question2_2Space">
+            <div id="question2_2">
+                <div id="question2_2tens" style="display: none">
+                    <div id="tens" class="tens"></div> tens is the same as <input class="inputBox1" id="inputTens" oninput="checkQuestion2('tens')" maxlength="3" > units
+                </div>
+
+                <div id="question2_2units" style="display: none">
+                    <div id="units" class="units"></div> units is the same as <input class="inputBox2" id="inputUnits"  oninput="checkQuestion2('units')"  maxlength="2"> tens
+                </div>
+            </div>
 
         </div>
 
