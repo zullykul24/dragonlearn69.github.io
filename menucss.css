@@ -4,11 +4,15 @@
     
     
 }
+img {
+    height: 70%;
+    width: 70%;
+}
 p {
     font-size: 30px;
 }
 #content {
-   
+   height: 700px;
 }
 a:hover {
     color: red;

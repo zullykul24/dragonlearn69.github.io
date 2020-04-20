@@ -6,17 +6,14 @@
     <link href="game1.css" rel="stylesheet">
 </head>
 <body>
-    <script type="text/javascript" src="../Game1/game1.js">
-    var i = 0;
-        
-    </script>
+    <script type="text/javascript" src="../Game1/game1.js"></script>   
     <div class="mainbox">
     <div class="headbox">
-        <div class="back">
+        <div class="back"> <!--Back button-->
             <a href="../menu.html" style="cursor: pointer; font-weight: bold; color: blue; text-decoration: none;">Back</a>
         </div>
         <div class="rightbar">
-            <div class="progress">
+            <div class="progress"> <!--balls container-->
                 <div class="ball" id="ball_1"></div> 
                 <div class="ball" id="ball_2"></div>
                 <div class="ball" id="ball_3"></div>
@@ -24,7 +21,7 @@
                 <div class="ball" id="ball_5"></div>
             </div>
         </div>
-        <div class="next" >
+        <div class="next" > <!--Next button-->
             <p id="next_link" onclick="next()" style="cursor: pointer; width: 100px; height: 40px; 
             margin-top: 3px; font-weight: bold; color: blue; "></p>
         </div>
@@ -32,32 +29,32 @@
     <div class="contentncap">
         <div class="caption">Type the number which has</div>
         <div class="content">                                          
-            <div class="line">
-                <div class="question" id="question1">3 hundreds, 9 units, 5 tens:</div>
+            <div class="line"> <!--Line contains questions-->
+                <div class="question" id="question_1">3 hundreds, 9 units, 5 tens:</div>
                 <div class="answer">
                     <div class="check_input">
-                        <input type="text" value="" id="input_1" style="width: 100px;"> 
-                        <input type="submit" value="check" onclick="check_1(numbers1_arr[lesson]); commit(); check_finish();"> <!-- Click to check the answer-->
+                        <input type="text" value="" id="input_1" class="input" style="width: 100px;"> 
+                        <input type="submit" id="submit_1" class="submit" value="check" onclick="check_1(numbers1_arr[lesson]); commit(); check_finish();"> <!-- Click to check the answer-->
                     </div>
                     <div class ="message" id="message_1"></div>
                 </div>
             </div>
             <div class="line">
-                <div class="question" id="question2">5 tens and 3 hundreds:</div>
+                <div class="question" id="question_2">5 tens and 3 hundreds:</div>
                 <div class="answer">
                     <div class="check_input">
-                        <input type="text" value="" id="input_2" style="width: 100px;">
-                        <input type="submit" value="check" onclick="check_2(numbers2_arr[lesson]); commit(); check_finish();">
+                        <input type="text" value="" class="input" id="input_2" style="width: 100px;">
+                        <input type="submit" id="submit_2" class="submit" value="check" onclick="check_2(numbers2_arr[lesson]); commit(); check_finish();">
                     </div>
                     <div class ="message" id="message_2"></div>
                 </div>
             </div>
             <div class="line">
-                <div class="question" id="question3" >9 units and 5 tens:</div>
+                <div class="question" id="question_3" >9 units and 5 tens:</div>
                 <div class="answer">
                     <div class="check_input">
-                        <input type="text" value="" id="input_3" style="width: 100px;">
-                        <input type="submit" value="check" onclick="check_3(numbers3_arr[lesson]); commit();check_finish();" >
+                        <input type="text" value="" class="input" id="input_3" style="width: 100px;">
+                        <input type="submit" class="submit" id="submit_3" value="check" onclick="check_3(numbers3_arr[lesson]); commit();check_finish();" >
                     </div>
                     <div class ="message" id="message_3"></div>
                 </div>
