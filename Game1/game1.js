@@ -18,16 +18,17 @@
             "5 tens and 3 hundreds:",
             "8 hundreds and 2 tens:",
             "4 units and 2 hundreds:",
-            "1 ten and 8 units",
-            "4 hundreds and 7 units"
+            "1 ten and 8 units:",
+            "4 hundreds and 7 units:"
             ];
         var question3_arr = [
             "9 units and 5 tens:",
             "6 units and 8 hundreds:",
             "7 tens and 4 units:",
-            "6 hundreds and 1 ten",
-            "8 tens and 4 hundreds"
+            "6 hundreds and 1 ten:",
+            "8 tens and 4 hundreds:"
             ];
+        
         
         function check_1(x)    // Check the first answer
         {
@@ -96,9 +97,9 @@
             var input3 = document.getElementById("input_3");
 
 
-            var question1 = document.getElementById("question1");
-            var question2 = document.getElementById("question2");
-            var question3 = document.getElementById("question3");
+            var question1 = document.getElementById("question_1");
+            var question2 = document.getElementById("question_2");
+            var question3 = document.getElementById("question_3");
 
 
             var message_1 = document.getElementById("message_1");
@@ -118,20 +119,24 @@
             next_link.innerHTML = ""; // Next button disappears 
 
 
-            question1.innerHTML = question1_arr[lesson+1];
-            question2.innerHTML = question2_arr[lesson+1];
-            question3.innerHTML = question3_arr[lesson+1];
+            question1.innerHTML = question1_arr[lesson+1] + numbers1_arr[lesson+1];
+            question2.innerHTML = question2_arr[lesson+1] + numbers2_arr[lesson+1];;
+            question3.innerHTML = question3_arr[lesson+1] + numbers3_arr[lesson+1];;
             lesson++;
         }
         function commit(){  //When u give 3 true answers, the Next button appears 
             
-            var next_link = document.getElementById("next_link");
+           var next_link = document.getElementById("next_link");
             if(trueAnswer == 3 && lesson < numberOfLessons - 1){
                 if(check_subPoint == 0)addPoint();
                 next_link.innerHTML = "Next";
                 trueAnswer = 0;
             }
-            if(lesson == (numberOfLessons - 1) && trueAnswer == 3)next_link.innerHTML = "Finish"; // Finish all questions of lessons
+            if(lesson == (numberOfLessons - 1) && trueAnswer == 3){ // Finish all questions of lessons
+                next_link.innerHTML = "Finish";
+                if(check_subPoint == 0)addPoint();
+                trueAnswer = 0;
+            } 
         }
         function check_finish(){  //Check when u finish all lessons
         var next_link = document.getElementById("next_link");
@@ -149,7 +154,7 @@ const numberOfBalls = 5;
 function addPoint (){
     rightBalls++;
     var ele = document.getElementById(ball_arr[numberOfBalls - 1 - point]);
-    var id = setInterval(frame, 5);
+    var id = setInterval(frame, 5); //set higher to see balls move more slowly
     function frame(){
         if (pos == 360){ // 560 - 40*5 = progressWidth - numberOfBalls * ballWidth
             clearInterval(id);
