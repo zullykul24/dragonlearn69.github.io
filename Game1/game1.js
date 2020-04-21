@@ -2,7 +2,7 @@
         var lesson = 0; 
         const numberOfLessons = 5;
         var check_subPoint = 0;
-        var trueAnswer = 0;
+        var trueAnswer = 0;// Nam test
         var rightBalls = 0; // count the right balls
         var numbers1_arr = ["359", "826", "274", "618", "487"]; // chưa tối ưu, nên cho array
         var numbers2_arr = ["350", "820", "204", "18", "407"] ;
