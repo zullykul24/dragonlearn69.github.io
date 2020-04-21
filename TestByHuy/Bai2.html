@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>How many tens in numbers up to 200</title>
     <link href="css_cop.css" rel="stylesheet">
 
 
 </head>
 <body>
 
-<div class="mainbox">
-    <div class="headbox">
+<div class="mainBox">
+    <div class="headBox">
         <div class="back">
             <a href="../menu.html" style="cursor: pointer; font-weight: bold; color: blue; text-decoration: none;">Back</a>
         </div>
-        <div class="rightbar">
+        <div class="rightBar">
             <div class="progress">
                <!--   <div class="ball" id="ball_1"></div>
                 <div class="ball" id="ball_2"></div>
@@ -38,30 +38,33 @@
                    <button onclick="addColumn(3)">ADD COLUMN</button>
                    <button onclick="clearColumn()">CLEAR COLUMN</button>
    -->
-            <div id="column"></div>
+            <div id="column" class="column"></div>
         </div>
 
         <div id="question2_1Space" class="question2_1Space" >
-            <div id="question" ></div>
+            <div id="question2_1" class="question2_1" >
 
-            <p>
-                Here there are <input class="inputBox1" id="input1" oninput="checkQuestion1(1)"   maxlength="2"> tens -
-            </p>
-            <p>
-                which is the same as <input class="inputBox2" id="input2" oninput="checkQuestion1(2)" maxlength="3"> units
-            </p>
-            <!-- tạo câu hỏi -->
-
+                <p>
+                    Here there are <input class="inputBox1" id="input1" oninput="checkQuestion1(1)"   maxlength="2"> tens -
+                </p>
+                <p>
+                    which is the same as <input class="inputBox2" id="input2" oninput="checkQuestion1(2)" maxlength="3"> units
+                </p>
+                <!-- tạo câu hỏi -->
+            </div>
 
         </div>
 
         <div id="question2_2Space" style="display: none" class="question2_2Space">
-            <div id="question2_2">
-                <div id="question2_2tens" style="display: none">
+            <div id="question2_2" class="question2_2">
+                <div id="question2_2tens" class="question2_2tens" style="display: none" >
+
                     <div id="tens" class="tens"></div> tens is the same as <input class="inputBox1" id="inputTens" oninput="checkQuestion2('tens')" maxlength="3" > units
                 </div>
 
-                <div id="question2_2units" style="display: none">
+                <div id="question2_2units" class="question2_2units" style="display: none">
+                    <div></div>
+                    <div></div>
                     <div id="units" class="units"></div> units is the same as <input class="inputBox2" id="inputUnits"  oninput="checkQuestion2('units')"  maxlength="2"> tens
                 </div>
             </div>
@@ -74,11 +77,6 @@
 
 
 </div>
-
-
-
-
-
 
 <script type="text/javascript" src="lesson2.js"></script>
 

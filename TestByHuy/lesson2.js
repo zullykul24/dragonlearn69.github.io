@@ -1,11 +1,6 @@
 
 // còn thiếu part 2, chuyển động của column, màn hình chiến thắng, chỉnh câu hỏi và column cho cân đối, có thể thêm vài class vào cho nó hướng đối tượng
 
-var canvas = document.getElementById("progressBar");        // tạo progress bar
-var ctx = canvas.getContext("2d");
-ctx.fillStyle = "#FF0000";
-
-
 let questionVariable = [           //  [previous column, added column]
     [5,0],
     [8,2],
@@ -23,32 +18,29 @@ let indexY=0;
 
 let check1_1=false;                   // [index câu hỏi 1]
 let check1_2=false;                   // [index câu hỏi 2]
-let check2  =false;
+
+var canvas = document.getElementById("progressBar");        // tạo progress bar
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#FF0000";
 
 function start() {
     ctx.fillRect(0,0,560*(indexX/(questionVariable.length-1)),40);     // vẽ progress bar
     ctx.strokeRect(0,0,560,40);
     if(indexY===0) {
-
         clearColumn();
     }
     addColumn(questionVariable[indexX][indexY]);
-
-
     addQuestion1(questionVariable[indexX][indexY]);
 }
 
 function addQuestion2() {
     if(questionVariable[indexX][1]==="tens"){
-
         document.getElementById("question2_2tens").style.display="block";
         document.getElementById("question2_2units").style.display="none";
-
 
         document.getElementById("tens").innerHTML=questionVariable[indexX][0];
     }
     else{
-
         document.getElementById("question2_2tens").style.display="none";
         document.getElementById("question2_2units").style.display="block";
 
@@ -64,40 +56,28 @@ function start2() {
     if(indexX===4){
         deletePlatform1();
     }
-
-
     addQuestion2();
 }
-
 
 function clearColumn() {                                            // xóa các column trên bản đồ
     var list = document.getElementById("column");
     while (list.hasChildNodes()){
         list.removeChild(list.firstChild);
     }
-
 }
 
-
-
 function addColumn(number) {                                    // thêm column theo number
-
-
     for(var a=0;a<number;a++) {
         var img = document.createElement("img");
         img.src = "https://i.ibb.co/4S5Yw11/block.png";
         var src = document.getElementById("column");
 
         src.appendChild(img);
-
     }
-    console.log('add '+number+' column');
 }
 function addQuestion1(number){                                   // thêm câu hỏi nhưng cái này đã làm trên file html
 
-    console.log('add '+number+' question');
 }
-
 
 async function checkQuestion2(index) {
     let number;
@@ -124,12 +104,8 @@ async function checkQuestion2(index) {
         } else {
             console.log("sai roi dap an la " + number);
         }
-
     }
-
-
 }
-
 
 async function checkQuestion1(index) {                                  // check đáp án đúng chưa, nếu đúng rồi thì next màn
     var number;
@@ -149,21 +125,15 @@ async function checkQuestion1(index) {                                  // check
     if (index === 1) {
         var answer1 = document.getElementById("input1").value;
         if (answer1 == number) {
-            console.log("dap an dung cau 1");//
             check1_1 = true;
         } else {
-            console.log("dap an sai cau 1");//
-            console.log("dap an dung cau 1 bang: " + number);//
             check1_1 = false;
         }
     } else if (index === 2) {
         var answer2 = document.getElementById("input2").value;
         if (answer2 == number) {
-            console.log("dap an dung cau 2");//
             check1_2 = true;
         } else {
-            console.log("dap an sai cau 2");//
-            console.log("dap an dung cau 2 bang: " + number);//
             check1_2 = false;
         }
     }
@@ -186,31 +156,24 @@ function deletePlatform1() {
     document.getElementById("columnSpace").style.display="none";
     document.getElementById("question2_1Space").style.display="none";
     document.getElementById("question2_2Space").style.display="block";
-
-    console.log(document.getElementById("content2").childNodes);//
 }
 
 function transition() {
-        console.log("chuyen canh");
         return new Promise(resolve => setTimeout(resolve, 2000));
-
 }
 
-
 function goOut() {
-
 }
 
 function next2() {
+    indexX++;
 
-        indexX++;
     if(isOutOfQuestion()){
         goOut();
     }
     else {
         start2();
     }
-    
 }
 
 function next1(){                                                    // next màn
@@ -219,7 +182,6 @@ function next1(){                                                    // next mà
         next2();
     }
     else {
-
         if (indexY === 1) {
             indexX++;
             indexY = 0;
@@ -232,7 +194,6 @@ function next1(){                                                    // next mà
             indexX++;
             indexY = 0;
         }
-        console.log("indexX="+indexX+", indexY="+indexY);//
 
         if(indexX<=3){
             start();
@@ -240,12 +201,8 @@ function next1(){                                                    // next mà
         else {
             start2();
         }
-
     }
 }
-
-
-
 
 start();                                                        // start trước
 

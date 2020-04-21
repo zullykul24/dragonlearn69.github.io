@@ -6,14 +6,34 @@ body {
     height: 550px;
     width: 480px;
     float: left;
+
     background-color: red;
-    margin-top: 20px;
+
+}
+.column{
+    margin-top: 100px;
+    margin-left: 50px;
+}
+.question2_1{
+    margin-top: 100px;
+    background-color: blue;
+}
+.question2_2tens{
+
+}
+.question2_2units{
+
+}
+div.question2_2{
+
+
 }
 .question2_2Space{
     height: 550px;
-    width: 960px;
+    width:  960px;
     text-align: center;
-    position: relative;
+
+
     font-size: 30px;
 
 }
@@ -63,7 +83,7 @@ input.inputBox2{
 chi them phan tren
  */
 
-.mainbox {
+.mainBox {
     z-index: 0;
     position: relative;
     margin: 15px auto 20px;
@@ -72,7 +92,7 @@ chi them phan tren
     border-radius: 15px;
     background: #ffffff;
 }
-.headbox {
+.headBox {
     border-radius: 15px 15px 0px 0px  ;
 
     background: rgb(12, 36, 87);
@@ -90,13 +110,11 @@ chi them phan tren
     font-family: sans-serif;
     background-color: #ffffff;
 }
-.rightbar {
+.rightBar {
     height: 49px;
     float: left;
     background-color:#ffffff;
     width: 760px;
-
-
 
 }
 .next {
@@ -156,11 +174,7 @@ chi them phan tren
     line-height: 100px;
     font-size: 40px;
 }
-.question {
-    float: left;
-    width: 500px;
-    height: 140px;
-}
+
 .answer {
     float: left;
     height: 140px;
