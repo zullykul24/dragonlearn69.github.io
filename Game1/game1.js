@@ -1,4 +1,4 @@
-        var count = 0; ///count the completed questions
+
         var lesson = 0; 
         const numberOfLessons = 5;
         var check_subPoint = 0;
@@ -29,7 +29,11 @@
             "8 tens and 4 hundreds:"
             ];
         
-        
+        function start(){
+            var mess = document.getElementById("message_1");
+            mess.innerHTML = "Start";
+        }
+        //start();
         function check_1(x)    // Check the first answer
         {
             var input1 = document.getElementById("input_1").value;
@@ -92,23 +96,23 @@
             console.log(check_subPoint);
         }
         function next(){   //New 3 questions with blank inputs and they're unchecked.
-            var input1 = document.getElementById("input_1");
-            var input2 = document.getElementById("input_2");
-            var input3 = document.getElementById("input_3");
+            var input_1 = document.getElementById("input_1");
+            var input_2 = document.getElementById("input_2");
+            var input_3 = document.getElementById("input_3");
 
 
-            var question1 = document.getElementById("question_1");
-            var question2 = document.getElementById("question_2");
-            var question3 = document.getElementById("question_3");
+            var question_1 = document.getElementById("question_1");
+            var question_2 = document.getElementById("question_2");
+            var question_3 = document.getElementById("question_3");
 
 
             var message_1 = document.getElementById("message_1");
             var message_2 = document.getElementById("message_2");
             var message_3 = document.getElementById("message_3");
 
-            input1.value = "";
-            input2.value = "";
-            input3.value = ""; // clear inputs
+            input_1.value = "";
+            input_2.value = "";
+            input_3.value = ""; // clear inputs
             message_1.innerHTML = "";
             message_2.innerHTML = ""; // clear messages
             message_3.innerHTML = "";
@@ -117,22 +121,25 @@
             
             var next_link = document.getElementById("next_link");
             next_link.innerHTML = ""; // Next button disappears 
+            next_link.style.display = "none";
 
 
-            question1.innerHTML = question1_arr[lesson+1] + numbers1_arr[lesson+1];
-            question2.innerHTML = question2_arr[lesson+1] + numbers2_arr[lesson+1];;
-            question3.innerHTML = question3_arr[lesson+1] + numbers3_arr[lesson+1];;
+            question_1.innerHTML = question1_arr[lesson+1] + numbers1_arr[lesson+1];
+            question_2.innerHTML = question2_arr[lesson+1] + numbers2_arr[lesson+1];;
+            question_3.innerHTML = question3_arr[lesson+1] + numbers3_arr[lesson+1];;
             lesson++;
         }
         function commit(){  //When u give 3 true answers, the Next button appears 
             
            var next_link = document.getElementById("next_link");
-            if(trueAnswer == 3 && lesson < numberOfLessons - 1){
+            if(trueAnswer == 3 && lesson < numberOfLessons - 4){ //-1
                 if(check_subPoint == 0)addPoint();
+                next_link.style.display = "block";
                 next_link.innerHTML = "Next";
                 trueAnswer = 0;
             }
-            if(lesson == (numberOfLessons - 1) && trueAnswer == 3){ // Finish all questions of lessons
+            if(lesson == (numberOfLessons - 4) && trueAnswer == 3){ // Finish all questions of lessons // -1
+                next_link.style.display = "block";
                 next_link.innerHTML = "Finish";
                 if(check_subPoint == 0)addPoint();
                 trueAnswer = 0;
@@ -140,12 +147,16 @@
         }
         function check_finish(){  //Check when u finish all lessons
         var next_link = document.getElementById("next_link");
-        if(next_link.innerHTML == "Finish"){
-                next_link.onclick = function(){
-                    location.href = "../menu.html"; //Click finish to go to menu
-                }
+        if(next_link.innerHTML == "Finish"){ //Finish
+              
+                next_link.onclick = hide();
+
             }
         }
+function backToMenu(){
+    location.href = "../menu.html";
+
+}
 // balls movement
 var ball_arr = ["ball_1", "ball_2", "ball_3", "ball_4", "ball_5"];
 var pos = 0;
@@ -181,5 +192,83 @@ function subPoint()
         }
         point--;
         pos = 360;
+    }
+    function hide(){
+       var cap = document.getElementById("caption");
+       var lines = document.getElementsByClassName("line");
+       for(i = 0; i < lines.length ;i++){lines[i].style.display = 'none'; } 
+        
+       // cap.style.display = "block";
+        cap.innerHTML = "You've completed the game! Congratulations!" ;
+        cap.style = "font-size: 30px";
+       
+        lines[0].style = "display: block; font-size: 40px; text-align: center; line-height: 50px;";
+        lines[0].innerHTML = "Your score: "+rightBalls;
+       // lines[0].style = "line-height: 50px;"
+
+
+        if(rightBalls == 5)lines[0].innerHTML +="<br>Perfect!";
+        else lines[0].innerHTML +="<br>Try better next time!";
+
+
+        lines[1].style = "display: block; font-size: 40px; text-align: center";
+        lines[1].innerHTML = "<input type='submit' value='Restart' onclick= 'restart()';>";
+       // lines[1].innerHTML.onclick = restart();
+        lines[2].style = "display: block; font-size: 40px; text-align: center";
+        lines[2].innerHTML = "<input type='submit' value='Back to menu' onclick = 'backToMenu()'>";
+
+        var next_link = document.getElementById("next_link");
+            next_link.innerHTML = ""; // Next button disappears 
+            next_link.style.display = "none";
+
+    }
+    function restart(){
+        //reset the variables;
+        lesson = 0; 
+        check_subPoint = 0;
+        trueAnswer = 0;
+        rightBalls = 0;
+
+        var cap = document.getElementById("caption");
+        cap.innerHTML = "Type the number which has" ;
+        cap.style = "width: 960px; position: relative; height: 70px; text-align: center; line-height: 69px; font-size: 50px;";
+        var lines = document.getElementsByClassName("line");
+
+
+
+       for(i = 0; i < lines.length ;i++){lines[i].style.display = 'block'; } 
+            var input_1 = document.getElementById("input_1");
+            var input_2 = document.getElementById("input_2");
+            var input_3 = document.getElementById("input_3");
+
+
+            var question_1 = document.getElementById("question_1");
+            var question_2 = document.getElementById("question_2");
+            var question_3 = document.getElementById("question_3");
+
+
+            var message_1 = document.getElementById("message_1");
+            var message_2 = document.getElementById("message_2");
+            var message_3 = document.getElementById("message_3");
+
+            input_1.value = "";
+            input_2.value = "";
+            input_3.value = ""; // clear inputs
+
+            message_1.innerHTML = "";
+            message_2.innerHTML = ""; // clear messages
+            message_3.innerHTML = "";
+
+            
+            var next_link = document.getElementById("next_link");
+            next_link.innerHTML = ""; // Next button disappears 
+            next_link.style.display = "none";
+
+
+            question_1.innerHTML = question1_arr[lesson+1] + numbers1_arr[0];
+            question_2.innerHTML = question2_arr[lesson+1] + numbers2_arr[0];;
+            question_3.innerHTML = question3_arr[lesson+1] + numbers3_arr[0];;
+
+    
     }
         

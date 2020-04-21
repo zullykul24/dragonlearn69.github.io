@@ -22,19 +22,19 @@
             </div>
         </div>
         <div class="next" > <!--Next button-->
-            <p id="next_link" onclick="next()" style="cursor: pointer; width: 100px; height: 40px; 
-            margin-top: 3px; font-weight: bold; color: blue; "></p>
+            <p id="next_link" onclick=" check_finish(); next();" style="cursor: pointer; width: 100px; height: 40px; 
+            margin-top: 3px; font-weight: bold; color: blue; display: none;"></p>
         </div>
     </div>
     <div class="contentncap">
-        <div class="caption">Type the number which has</div>
+        <div class="caption" id="caption">Type the number which has</div>
         <div class="content">                                          
             <div class="line"> <!--Line contains questions-->
                 <div class="question" id="question_1">3 hundreds, 9 units, 5 tens:</div>
                 <div class="answer">
                     <div class="check_input">
                         <input type="text" value="" id="input_1" class="input" style="width: 100px;"> 
-                        <input type="submit" id="submit_1" class="submit" value="check" onclick="check_1(numbers1_arr[lesson]); commit(); check_finish();"> <!-- Click to check the answer-->
+                        <input type="submit" id="submit_1" class="submit" value="check" onclick="check_1(numbers1_arr[lesson]); commit(); "> <!-- Click to check the answer-->
                     </div>
                     <div class ="message" id="message_1"></div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="answer">
                     <div class="check_input">
                         <input type="text" value="" class="input" id="input_2" style="width: 100px;">
-                        <input type="submit" id="submit_2" class="submit" value="check" onclick="check_2(numbers2_arr[lesson]); commit(); check_finish();">
+                        <input type="submit" id="submit_2" class="submit" value="check" onclick="check_2(numbers2_arr[lesson]); commit(); ">
                     </div>
                     <div class ="message" id="message_2"></div>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="answer">
                     <div class="check_input">
                         <input type="text" value="" class="input" id="input_3" style="width: 100px;">
-                        <input type="submit" class="submit" id="submit_3" value="check" onclick="check_3(numbers3_arr[lesson]); commit();check_finish();" >
+                        <input type="submit" class="submit" id="submit_3" value="check" onclick="check_3(numbers3_arr[lesson]); commit();" >
                     </div>
                     <div class ="message" id="message_3"></div>
                 </div>
