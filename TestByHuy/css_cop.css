@@ -3,20 +3,58 @@ body {
     font-family: sans-serif;
 }
 .columnSpace{
-    height: 550px;
+    height: 400px;
     width: 480px;
     float: left;
 
-    background-color: red;
+  /*  background-color: red;
+
+   */
 
 }
 .column{
     margin-top: 100px;
     margin-left: 50px;
 }
+.question2_1Space{
+     float: right;
+  /*   margin-bottom: 550px;
+
+   */
+     height: 550px;
+     width: 480px;
+     text-align: left;
+     font-size: 30px;
+   /*  background-color: blue;
+
+    */
+ }
 .question2_1{
-    margin-top: 100px;
-    background-color: blue;
+     margin-top: 100px;
+
+ }
+.suggest2_1Space{
+  /*  padding-top: 400px;
+*/
+
+
+    height: 150px;
+    width: 480px;
+   /* background-color: brown;
+
+    */
+    float: left;
+}
+.suggest2_1{
+    margin-left: 20px;
+    margin-right: 20px;
+
+    font-size: 30px;
+    text-align: center;
+    background-color: #f0f1ba;
+}
+div.tens2_1{
+    display: inline;
 }
 .question2_2tens{
 
@@ -28,15 +66,46 @@ div.question2_2{
 
 
 }
+
 .question2_2Space{
-    height: 550px;
+    height: 200px;
     width:  960px;
     text-align: center;
+  /*  background-color: red;
 
+   */
+    float: left;
 
     font-size: 30px;
 
 }
+.suggest2_2Space{
+   /*  background-color: blue;
+
+    */
+     height: 350px;
+     width: 300px;
+     float: left;
+ }
+.suggest2_2{
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 30px;
+    font-size: 30px;
+    text-align: center;
+    background-color: #f0f1ba;
+}
+.column2_2Space{
+    height: 350px;
+    width: 660px;
+    float: right;
+
+ /*   background-color: aqua;
+
+  */
+}
+
+
 div.tens{
     display: inline;
 }
@@ -44,18 +113,11 @@ div.units{
     display: inline;
 }
 
-.question2_1Space{
-    float: left;
-    height: 550px;
-    width: 480px;
-    text-align: left;
-    font-size: 30px;
 
-}
 input.inputBox1{
     type: text;
     value: '';
-    width: 35px;
+    width: 50px;
     height: 30px;
     font-size: 30px;
     text-align: center;
@@ -63,7 +125,7 @@ input.inputBox1{
 input.inputBox2{
     type: text;
     value: '';
-    width: 50px;
+    width: 35px;
     height: 30px;
     font-size: 30px;
     text-align: center;

@@ -38,22 +38,43 @@
                    <button onclick="addColumn(3)">ADD COLUMN</button>
                    <button onclick="clearColumn()">CLEAR COLUMN</button>
    -->
-            <div id="column" class="column"></div>
+            <div id="column" class="column" ></div>
         </div>
+
+
 
         <div id="question2_1Space" class="question2_1Space" >
             <div id="question2_1" class="question2_1" >
 
                 <p>
-                    Here there are <input class="inputBox1" id="input1" oninput="checkQuestion1(1)"   maxlength="2"> tens -
+                    Here there are <input class="inputBox2" id="input1" oninput="checkQuestion1(1)"   maxlength="2"> tens -
                 </p>
                 <p>
-                    which is the same as <input class="inputBox2" id="input2" oninput="checkQuestion1(2)" maxlength="3"> units
+                    which is the same as <input class="inputBox1" id="input2" oninput="checkQuestion1(2)" maxlength="3"> units
                 </p>
                 <!-- tạo câu hỏi -->
             </div>
 
         </div>
+
+        <div id="suggest2_1Space" class="suggest2_1Space">
+
+            <div id="suggest2_1" class="suggest2_1" style="display: block">
+                <div id="suggest2_1tens" style="display: none">
+                    Each rod has 1 ten.<br>
+                    How many tens in total?
+
+                </div>
+                <div id="suggest2_1units" style="display: none">
+                    Here there are <div id="tens2_1" class="tens2_1"></div> rods - each of 10 cubes.<br>
+                    How many cubes in total?
+                </div>
+
+
+            </div>
+
+        </div>
+
 
         <div id="question2_2Space" style="display: none" class="question2_2Space">
             <div id="question2_2" class="question2_2">
@@ -69,6 +90,26 @@
                 </div>
             </div>
 
+        </div>
+
+
+
+
+
+        <div id="suggest2_2Space" class="suggest2_2Space" style="display: none">
+            <div id="suggest2_2" >
+                <div id="suggest2_2tens" style="display: none" class="suggest2_2">
+                    How many rod?
+                </div>
+                <div id="suggest2_2units" style="display: none" class="suggest2_2">
+                    How many cubes?
+                </div>
+
+            </div>
+        </div>
+
+        <div id="column2_2Space" class="column2_2Space" style="display: none">
+            <div id="column2_2" class="column2_2"></div>
         </div>
 
 
