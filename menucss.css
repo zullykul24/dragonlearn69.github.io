@@ -1,6 +1,9 @@
 #header {
     text-align: center;
     height: 100px;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
     
     
 }
@@ -12,7 +15,9 @@ p {
     font-size: 30px;
 }
 #content {
+    float: left;
    height: 700px;
+   
 }
 a:hover {
     color: red;
@@ -21,11 +26,18 @@ a:hover {
     float: left;
     width: 500px;
     height: 500px;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    margin-left: 200px;
 
-    margin-left: 250px;
 }
 #icon2 {
     float: left;
+    margin-left: 700px;
+    position: absolute;
+    max-width: 100%;
+    height: auto;
     width: 500px;
     height: 500px;
   
