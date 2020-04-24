@@ -113,6 +113,15 @@ div.units{
     display: inline;
 }
 
+input{
+    color: transparent;
+    text-shadow: 0 0 0 black;
+
+
+    &:focus {
+     outline: none;
+    }
+}
 
 input.inputBox1{
     type: text;
@@ -121,6 +130,7 @@ input.inputBox1{
     height: 30px;
     font-size: 30px;
     text-align: center;
+
 }
 input.inputBox2{
     type: text;

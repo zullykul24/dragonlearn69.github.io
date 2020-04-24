@@ -1,0 +1,19 @@
+<html
+
+<head>
+    <title>JavaScript to automatically move from one field to another field</title>
+    <script type="text/javascript">
+        function movetoNext(current, nextFieldID) {
+            if (current.value.length >= current.maxLength) {
+                document.getElementById(nextFieldID).focus();
+            }
+        }
+    </script>
+</head>
+<body>
+    <b>Enter your Text:</b>
+    <input type="text" id="first" size="4" onkeyup="movetoNext(this, 'second')" maxlength="3" />
+    <input type="text" id="second" size="4" onkeyup="movetoNext(this, 'third')" maxlength="3" />
+    <input type="text" id="third" size="5" maxlength="4" />
+</body>
+</html>
