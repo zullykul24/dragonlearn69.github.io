@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>How many tens in numbers up to 200</title>
-    <link href="css_cop.css" rel="stylesheet">
+    <link href="game2.css" rel="stylesheet">
 
 
 </head>
@@ -16,15 +16,7 @@
         </div>
         <div class="rightBar">
             <div class="progress">
-               <!--   <div class="ball" id="ball_1"></div>
-                <div class="ball" id="ball_2"></div>
-                <div class="ball" id="ball_3"></div>
-                <div class="ball" id="ball_4"></div>
-                <div class="ball" id="ball_5"></div>
-                -->
-
-             <canvas id="progressBar" width="560" height="40" ></canvas>
-
+                <canvas id="progressBar" width="560" height="40" ></canvas>
             </div>
         </div>
         <div class="next" ><!-------------------------------------------------------------------------------------------->
@@ -32,19 +24,14 @@
             margin-top: 3px; font-weight: bold; color: blue; "></p>
         </div>
     </div>
-    <div id="content2" class="content2" >
+    <div id="content" class="content" >
         <div id="columnSpace" class="columnSpace" >
-            <!--       <div id="start" onclick="start()">start</div>
-                   <button onclick="addColumn(3)">ADD COLUMN</button>
-                   <button onclick="clearColumn()">CLEAR COLUMN</button>
-   -->
+
             <div id="column" class="column" ></div>
         </div>
 
-
-
-        <div id="question2_1Space" class="question2_1Space" >
-            <div id="question2_1" class="question2_1" >
+        <div id="question1Space" class="question1Space" >
+            <div id="question1" class="question1" >
 
                 <p>
                     Here there are <input class="inputBox2" id="input1" oninput="checkQuestion1(1)"   maxlength="2"> tens -
@@ -57,33 +44,30 @@
 
         </div>
 
-        <div id="suggest2_1Space" class="suggest2_1Space">
+        <div id="suggest1Space" class="suggest1Space">
 
-            <div id="suggest2_1" class="suggest2_1" style="display: block">
-                <div id="suggest2_1tens" style="display: none">
+            <div id="suggest1" class="suggest1" style="display: block">
+                <div id="suggest1tens" style="display: none">
                     Each rod has 1 ten.<br>
                     How many tens in total?
 
                 </div>
-                <div id="suggest2_1units" style="display: none">
-                    Here there are <div id="tens2_1" class="tens2_1"></div> rods - each of 10 cubes.<br>
+                <div id="suggest1units" style="display: none">
+                    Here there are <div id="tens1" class="tens1"></div> rods - each of 10 cubes.<br>
                     How many cubes in total?
                 </div>
-
-
             </div>
-
         </div>
 
 
-        <div id="question2_2Space" style="display: none" class="question2_2Space">
-            <div id="question2_2" class="question2_2">
-                <div id="question2_2tens" class="question2_2tens" style="display: none" >
+        <div id="question2Space" style="display: none" class="question2Space">
+            <div id="question2" class="question2">
+                <div id="question2tens" class="question2tens" style="display: none" >
 
                     <div id="tens" class="tens"></div> tens is the same as <input class="inputBox1" id="inputTens" oninput="checkQuestion2('tens')" maxlength="3" > units
                 </div>
 
-                <div id="question2_2units" class="question2_2units" style="display: none">
+                <div id="question2units" class="question2units" style="display: none">
                     <div></div>
                     <div></div>
                     <div id="units" class="units"></div> units is the same as <input class="inputBox2" id="inputUnits"  oninput="checkQuestion2('units')"  maxlength="2"> tens
@@ -93,33 +77,27 @@
         </div>
 
 
-
-
-
-        <div id="suggest2_2Space" class="suggest2_2Space" style="display: none">
-            <div id="suggest2_2" >
-                <div id="suggest2_2tens" style="display: none" class="suggest2_2">
+        <div id="suggest2Space" class="suggest2Space" style="display: none">
+            <div id="suggest2" >
+                <div id="suggest2tens" style="display: none" class="suggest2">
                     How many rod?
                 </div>
-                <div id="suggest2_2units" style="display: none" class="suggest2_2">
+                <div id="suggest2units" style="display: none" class="suggest2">
                     How many cubes?
                 </div>
 
             </div>
         </div>
 
-        <div id="column2_2Space" class="column2_2Space" style="display: none">
-            <div id="column2_2" class="column2_2"></div>
+        <div id="column2Space" class="column2Space" style="display: none">
+            <div id="column2" class="column2"></div>
         </div>
-
-
 
     </div>
 
-
 </div>
 
-<script type="text/javascript" src="lesson2.js"></script>
+<script type="text/javascript" src="game2.js"></script>
 
 
 

@@ -23,17 +23,17 @@ var canvas = document.getElementById("progressBar");        // tạo progress ba
 var ctx = canvas.getContext("2d");
 ctx.fillStyle = "#FF0000";
 
-function start() {
+function start1() {
     ctx.fillRect(0,0,560*(indexX/(questionVariable.length-1)),40);     // vẽ progress bar
     ctx.strokeRect(0,0,560,40);
     if(indexY===0) {
-        clearColumn();
+        clearColumn1();
     }
-    addColumn(questionVariable[indexX][indexY]);
+    addColumn1(questionVariable[indexX][indexY]);
     addQuestion1(questionVariable[indexX][indexY]);
     movetoNextCursor("input1");
 }
-function addColumn(number) {                                                    // thêm column theo number
+function addColumn1(number) {                                                    // thêm column theo number
     var indexAdded;
     if(indexY===0){
         indexAdded=0;
@@ -60,7 +60,7 @@ function addColumn(number) {                                                    
     }
 }
 
-function clearColumn() {                                            // xóa các column trên bản đồ
+function clearColumn1() {                                            // xóa các column trên bản đồ
     var list = document.getElementById("column");
     while (list.hasChildNodes()){
         list.removeChild(list.firstChild);
@@ -71,24 +71,24 @@ function addQuestion1(number){                                   // thêm câu h
 
 }
 
-function showSuggestion2_1(index){
+function showSuggestion1(index){
     if(index===1){
-        document.getElementById("suggest2_1units").style.display="none";
-        document.getElementById("suggest2_1tens").style.display="block";
+        document.getElementById("suggest1units").style.display="none";
+        document.getElementById("suggest1tens").style.display="block";
     }
     else{
         if(indexY===0)
-            document.getElementById("tens2_1").innerHTML=questionVariable[indexX][0];
+            document.getElementById("tens1").innerHTML=questionVariable[indexX][0];
         else
-            document.getElementById("tens2_1").innerHTML=questionVariable[indexX][0]+questionVariable[indexX][1];
+            document.getElementById("tens1").innerHTML=questionVariable[indexX][0]+questionVariable[indexX][1];
 
-        document.getElementById("suggest2_1units").style.display="block";
-        document.getElementById("suggest2_1tens").style.display="none";
+        document.getElementById("suggest1units").style.display="block";
+        document.getElementById("suggest1tens").style.display="none";
     }
 }
-function unShowSuggestion2_1(){
-    document.getElementById("suggest2_1units").style.display="none";
-    document.getElementById("suggest2_1tens").style.display="none";
+function unShowSuggestion1(){
+    document.getElementById("suggest1units").style.display="none";
+    document.getElementById("suggest1tens").style.display="none";
 }
 
 async function checkQuestion1(index) {                                  // check đáp án đúng chưa, nếu đúng rồi thì next màn
@@ -109,13 +109,13 @@ async function checkQuestion1(index) {                                  // check
     if (index === 1) {
         var answer1 = document.getElementById("input1").value;
         if (answer1 == number) {
-            unShowSuggestion2_1();
+            unShowSuggestion1();
             check1_1 = true;
             movetoNextCursor("input2");
         } else {
             if(answer1.length===number.toString().length){
                 console.log("chua dung 1");
-                showSuggestion2_1(index);
+                showSuggestion1(index);
             }
 
             check1_1 = false;
@@ -123,13 +123,13 @@ async function checkQuestion1(index) {                                  // check
     } else if (index === 2) {
         var answer2 = document.getElementById("input2").value;
         if (answer2 == number) {
-            unShowSuggestion2_1();
+            unShowSuggestion1();
             check1_2 = true;
 
         } else {
             if(answer2.length===number.toString().length){
                 console.log("chua dung 2");
-                showSuggestion2_1(index);
+                showSuggestion1(index);
             }
 
             check1_2 = false;
@@ -161,7 +161,7 @@ function next1(){                                                    // next mà
             indexY = 0;
         }
         if(indexX<=3){
-            start();
+            start1();
         }
         else {
             start2();
@@ -183,14 +183,14 @@ function start2() {
 
 function addQuestion2() {
     if(questionVariable[indexX][1]==="tens"){
-        document.getElementById("question2_2tens").style.display="block";
-        document.getElementById("question2_2units").style.display="none";
+        document.getElementById("question2tens").style.display="block";
+        document.getElementById("question2units").style.display="none";
 
         document.getElementById("tens").innerHTML=questionVariable[indexX][0];
     }
     else{
-        document.getElementById("question2_2tens").style.display="none";
-        document.getElementById("question2_2units").style.display="block";
+        document.getElementById("question2tens").style.display="none";
+        document.getElementById("question2units").style.display="block";
 
         document.getElementById("units").innerHTML= questionVariable[indexX][0]*10;
     }
@@ -204,7 +204,7 @@ function addQuestion2() {
 
 
 function addColumn2(number) {
-    var src = document.getElementById("column2_2");
+    var src = document.getElementById("column2");
     if(!src.hasChildNodes()) {
         for (var a = 0; a < number; a++) {
             var img = document.createElement("img");
@@ -220,15 +220,11 @@ function addColumn2(number) {
     }
 }
 function clearColumn2() {                                            // xóa các column trên bản đồ
-    var list = document.getElementById("column2_2");
+    var list = document.getElementById("column2");
     while (list.hasChildNodes()){
         list.removeChild(list.firstChild);
     }
 }
-
-
-
-
 
 
 async function checkQuestion2(index) {
@@ -239,14 +235,14 @@ async function checkQuestion2(index) {
 
         if (number == document.getElementById("inputTens").value) {
             console.log("tra loi dung roi");
-            unShowSuggestion2_2();
+            unShowSuggestion2();
             await transition();
             document.getElementById("inputTens").value = '';
             next2();
         } else {
             if(number.toString().length===document.getElementById("inputTens").value.length){
                 console.log("sai roi dap an la " + number);
-                showSuggestion2_2(index);
+                showSuggestion2(index);
             }
 
         }
@@ -257,36 +253,36 @@ async function checkQuestion2(index) {
         if (number == document.getElementById("inputUnits").value) {
             console.log("tra loi dung roi");
 
-            unShowSuggestion2_2();
+            unShowSuggestion2();
             await transition();
             document.getElementById("inputUnits").value = '';
             next2();
         } else {
             if(number.toString().length===document.getElementById("inputUnits").value.length){
                 console.log("sai roi dap an la " + number);
-                showSuggestion2_2(index);
+                showSuggestion2(index);
             }
 
         }
     }
 }
 
-function showSuggestion2_2(index) {
+function showSuggestion2(index) {
     if(index === 'tens'){
-        document.getElementById("suggest2_2tens").style.display="none";
-        document.getElementById("suggest2_2units").style.display="block";
+        document.getElementById("suggest2tens").style.display="none";
+        document.getElementById("suggest2units").style.display="block";
         addColumn2(questionVariable[indexX][0]);
     }
     else if(index === 'units'){
-        document.getElementById("suggest2_2tens").style.display="block";
-        document.getElementById("suggest2_2units").style.display="none";
+        document.getElementById("suggest2tens").style.display="block";
+        document.getElementById("suggest2units").style.display="none";
         addColumn2(questionVariable[indexX][0]);
     }
 }
 
-function unShowSuggestion2_2() {
-    document.getElementById("suggest2_2tens").style.display="none";
-    document.getElementById("suggest2_2units").style.display="none";
+function unShowSuggestion2() {
+    document.getElementById("suggest2tens").style.display="none";
+    document.getElementById("suggest2units").style.display="none";
     clearColumn2();
 }
 
@@ -296,12 +292,12 @@ function unShowSuggestion2_2() {
 
 function deletePlatform1() {
     document.getElementById("columnSpace").style.display="none";
-    document.getElementById("question2_1Space").style.display="none";
-    document.getElementById("suggest2_1Space").style.display="none";
+    document.getElementById("question1Space").style.display="none";
+    document.getElementById("suggest1Space").style.display="none";
 
-    document.getElementById("suggest2_2Space").style.display="block";
-    document.getElementById("column2_2Space").style.display="block";
-    document.getElementById("question2_2Space").style.display="block";
+    document.getElementById("suggest2Space").style.display="block";
+    document.getElementById("column2Space").style.display="block";
+    document.getElementById("question2Space").style.display="block";
 }
 
 function transition() {
@@ -323,7 +319,7 @@ function next2() {
 
 
     if(isOutOfQuestion()){
-        goOut();
+        victory();
     }
     else {
 
@@ -337,7 +333,7 @@ function isOutOfQuestion(index){                                    // chuyển 
     return false;
 }
 
-function goOut() {
+function victory() {
     console.log("chuyen trang");
     window.location.replace("../victory.html");
 }
@@ -348,6 +344,6 @@ function goOut() {
 
 
 
-start();                                                        // start trước
+start1();                                                        // start1 trước
 
 

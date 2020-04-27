@@ -6,88 +6,49 @@ body {
     height: 400px;
     width: 480px;
     float: left;
-
-  /*  background-color: red;
-
-   */
-
 }
 .column{
     margin-top: 100px;
     margin-left: 50px;
 }
-.question2_1Space{
+.question1Space{
      float: right;
-  /*   margin-bottom: 550px;
-
-   */
      height: 550px;
      width: 480px;
      text-align: left;
      font-size: 30px;
-   /*  background-color: blue;
-
-    */
  }
-.question2_1{
+.question1{
      margin-top: 100px;
-
  }
-.suggest2_1Space{
-  /*  padding-top: 400px;
-*/
-
-
+.suggest1Space{
     height: 150px;
     width: 480px;
-   /* background-color: brown;
-
-    */
     float: left;
 }
-.suggest2_1{
+.suggest1{
     margin-left: 20px;
     margin-right: 20px;
-
     font-size: 30px;
     text-align: center;
     background-color: #f0f1ba;
 }
-div.tens2_1{
+div.tens1{
     display: inline;
 }
-.question2_2tens{
-
-}
-.question2_2units{
-
-}
-div.question2_2{
-
-
-}
-
-.question2_2Space{
+.question2Space{
     height: 200px;
     width:  960px;
     text-align: center;
-  /*  background-color: red;
-
-   */
     float: left;
-
     font-size: 30px;
-
 }
-.suggest2_2Space{
-   /*  background-color: blue;
-
-    */
+.suggest2Space{
      height: 350px;
      width: 300px;
      float: left;
  }
-.suggest2_2{
+.suggest2{
     margin-left: 40px;
     margin-right: 40px;
     padding: 30px;
@@ -95,34 +56,24 @@ div.question2_2{
     text-align: center;
     background-color: #f0f1ba;
 }
-.column2_2Space{
+.column2Space{
     height: 350px;
     width: 660px;
     float: right;
-
- /*   background-color: aqua;
-
-  */
 }
-
-
 div.tens{
     display: inline;
 }
 div.units{
     display: inline;
 }
-
 input{
     color: transparent;
     text-shadow: 0 0 0 black;
-
-
     &:focus {
      outline: none;
     }
 }
-
 input.inputBox1{
     type: text;
     value: '';
@@ -130,7 +81,6 @@ input.inputBox1{
     height: 30px;
     font-size: 30px;
     text-align: center;
-
 }
 input.inputBox2{
     type: text;
@@ -140,20 +90,11 @@ input.inputBox2{
     font-size: 30px;
     text-align: center;
 }
-
-
-.content2{
+.content{
     height: 550px;
     width: 960px;
     position: relative;
-
 }
-
-
-
-/*
-chi them phan tren
- */
 
 .mainBox {
     z-index: 0;
@@ -166,7 +107,6 @@ chi them phan tren
 }
 .headBox {
     border-radius: 15px 15px 0px 0px  ;
-
     background: rgb(12, 36, 87);
     height: 48px;
     line-height: 48px;
@@ -175,7 +115,6 @@ chi them phan tren
 .back {
     height: 49px;
     width: 100px;
-
     float: left;
     border-top-left-radius: 15px;
     text-align: center;
@@ -187,7 +126,6 @@ chi them phan tren
     float: left;
     background-color:#ffffff;
     width: 760px;
-
 }
 .next {
     height: 49px;
@@ -204,67 +142,4 @@ chi them phan tren
     background-color: #ededed;
     position: relative;
     border-radius: 5px;
-}
-.ball {
-    height: 40px;
-    width: 40px;
-    float: left;
-    position: relative;
-    border-radius: 40px;
-    background-color: red;
-}
-
-.contentncap {
-    padding-top: 10px;
-    margin-top: 1px, black;
-
-}
-
-
-.caption {
-    width: 960px;
-    position: relative;
-    height: 70px;
-    text-align: center;
-    line-height: 69px;
-    font-size: 50px;
-
-}
-.content {
-    width: 960px;
-    height: 420px;
-    position: relative;
-    background-color: #ffffff;
-    margin-left: 0px;
-    margin-top: 30px;
-}
-.line {
-    width: 960px;
-    float: top;
-    height: 140px;
-    text-align: left;
-    line-height: 100px;
-    font-size: 40px;
-}
-
-.answer {
-    float: left;
-    height: 140px;
-    width: 460px;
-    font-size: 20px;
-}
-.check_input {
-    float: left;
-    height: 140px;
-    width: 230px;
-}
-.mesage {
-    float: left;
-    height: 140px;
-    width: 230px;
-}
-.img {
-
-    height: 267px;
-    background-color: cyan;
 }
