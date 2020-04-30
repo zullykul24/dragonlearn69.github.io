@@ -2,6 +2,7 @@ body {
     background: url("../Picture/numbers.jpg") repeat;
    
     font-family: sans-serif;
+   
 }
 .mainbox {
     z-index: 0;

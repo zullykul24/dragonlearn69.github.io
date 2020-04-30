@@ -33,11 +33,16 @@ function check_1(x)    // Check the first answer
 {
     var input_1 = document.getElementById("input_1"); 
     var message_1 = document.getElementById("message_1");
+    var submit_1 = document.getElementById("submit_1");
     if(input_1.value == x)
     {    //True answer
         message_1.innerHTML = "Excellent!"; 
         message_1.style.color = "blue";
         trueAnswer++;
+        if(input_2.value == "")input_2.focus();
+        else if(input_3.value == "")input_3.focus();
+        input_1.disabled = true;
+        submit_1.disabled = true;
     }
     else if(input_1.value == "")
     { //No answer
@@ -56,11 +61,16 @@ function check_2(x) //Check the second answer
 {
     var input_2 = document.getElementById("input_2");
     var message_2 = document.getElementById("message_2");
+    var submit_2 = document.getElementById("submit_2");
     if(input_2.value == x)
     {
         message_2.innerHTML = "Excellent!";
         message_2.style.color = "blue";
         trueAnswer++;
+        if(input_1.value == "")input_1.focus();
+        else if(input_3.value == "")input_3.focus();
+        input_2.disabled = true;
+        submit_2.disabled = true;
     }
     else if(input_2.value == "")
     {
@@ -79,11 +89,16 @@ function check_3(x) //Check the third answer
 {
     var input_3 = document.getElementById("input_3");
     var message_3 = document.getElementById("message_3");
+    var submit_3 = document.getElementById("submit_3");
     if(input_3.value == x)
     {
         message_3.innerHTML = "Excellent!"; 
         message_3.style.color = "blue";
         trueAnswer++;
+        if(input_1.value == "")input_1.focus();
+        else if(input_2.value == "")input_2.focus();
+        input_3.disabled = true;
+        submit_3.disabled = true;
     }
     else if(input_3.value == "")
     {
@@ -122,6 +137,8 @@ function next()
         var message_2 = document.getElementById("message_2");
         var message_3 = document.getElementById("message_3");
 
+        input_1.focus();
+
         input_1.value = "";
         input_2.value = "";
         input_3.value = ""; // clear inputs
@@ -129,6 +146,12 @@ function next()
         message_2.innerHTML = ""; // clear messages
         message_3.innerHTML = "";
         check_subPoint = 0 ;
+
+        var inputs = document.getElementsByClassName("input");
+        for(i = 0;i < inputs.length; i++){inputs[i].disabled = false;} //enable inputs
+
+        var submits = document.getElementsByClassName("submit");
+        for(i = 0;i < submits.length; i++){submits[i].disabled = false;} //enable submits
  
         var next_link = document.getElementById("next_link");
 
@@ -273,6 +296,21 @@ function restart()
     var message_1 = document.getElementById("message_1");
     var message_2 = document.getElementById("message_2");
     var message_3 = document.getElementById("message_3");
+
+
+
+    input_1.focus();
+    
+
+  /*  var inputs = document.getElementsByClassName("input");
+    for(i = 0;i < inputs.length; i++){inputs[i].disabled = "disabled";}
+
+    var submits = document.getElementsByClassName("submit");
+    for(i = 0;i < submits.length; i++){submits[i].disabled = "disabled";}
+    */
+
+
+    
 
     input_1.value = "";
     input_2.value = "";
