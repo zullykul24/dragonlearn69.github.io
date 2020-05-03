@@ -2,6 +2,22 @@ body {
     background: url("../Picture/numbers.jpg") repeat;
     font-family: sans-serif;
 }
+.startSpace{
+    height: 550px;
+    width: 960px;
+
+}
+.ball{
+    width: 30px;
+    height: 40px;
+
+    float: left;
+    position: relative;
+
+
+
+    background: url("../Picture/ball3D.png");
+}
 .columnSpace{
     height: 400px;
     width: 480px;
