@@ -256,7 +256,7 @@ function finish_screen()
     else question_1.innerHTML +="<br>Try better next time!";
 
     question_2.style = " font-size: 40px; text-align: center; width: 960px;"; 
-    question_2.innerHTML = "<input type='submit' value='Restart' onclick= 'restart()';>";// Click button to restart
+    question_2.innerHTML = "<input type='submit' value='Restart' onclick= 'startButton()';>";// Click button to restart
     question_3.style = " font-size: 40px; text-align: center; width: 960px;";
     question_3.innerHTML = "<input type='submit' value='Back to menu' onclick = 'backToMenu()'>";//Click to go back to menu
 
@@ -274,6 +274,7 @@ function restart()
     rightBalls = 0;
 
     var cap = document.getElementById("caption");
+    cap.hidden = false;
     cap.innerHTML = "Type the number which has" ;
     cap.style = "width: 960px; position: relative; height: 70px; text-align: center; line-height: 69px; font-size: 50px;";
 
@@ -292,10 +293,21 @@ function restart()
     var question_2 = document.getElementById("question_2");
     var question_3 = document.getElementById("question_3");
 
+    question_1.hidden = false;
+    question_2.hidden = false;
+    question_3.hidden = false;
+    
+
 
     var message_1 = document.getElementById("message_1");
     var message_2 = document.getElementById("message_2");
     var message_3 = document.getElementById("message_3");
+
+    var inputs = document.getElementsByClassName("input");
+    for(i = 0;i < inputs.length; i++){inputs[i].disabled = false;} //enable inputs
+
+    var submits = document.getElementsByClassName("submit");
+    for(i = 0;i < submits.length; i++){submits[i].disabled = false;} //enable submits
 
 
 
@@ -325,6 +337,33 @@ function restart()
     question_1.innerHTML = question1_arr[lesson];
     question_2.innerHTML = question2_arr[lesson];
     question_3.innerHTML = question3_arr[lesson];
+
+
+    var img = document.getElementById("startButton");
+    img.hidden = true;
+
+}
+function startButton(){
+    var cap = document.getElementById("caption");
+    var img = document.getElementById("startButton");
+
+    var answer = document.getElementsByClassName("answer");
+    for(i = 0;i < answer.length; i++){answer[i].style.display = "none";}
+
+
+    var question_1 = document.getElementById("question_1");
+    var question_2 = document.getElementById("question_2");
+    var question_3 = document.getElementById("question_3");
+    question_1.hidden = true;
+    question_2.hidden = true;
+    question_3.hidden = true;
+
+    cap.hidden = true;
+    img.hidden = false;
+    img.style = "z-index: 1; margin-left: 345px; cursor: pointer;";
+    question_2.style = "width: 400px";
+
+    while(point > 0)subPoint();// reset the balls and points
 
 }
 

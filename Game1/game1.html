@@ -5,7 +5,7 @@
     <title>Writing numbers from assigned place value</title>
     <link href="game1.css" rel="stylesheet">
 </head>
-<body onload="restart()">
+<body onload="startButton()"><!--rétart()-->
     <script type="text/javascript" src="../Game1/game1.js"></script>   
     <div class="mainbox">
     <div class="headbox">
@@ -39,7 +39,8 @@
                     <div class ="message" id="message_1"></div>
                 </div>
             </div>
-            <div class="line">
+            <div class="line"><!--Line 2-->
+                <img id="startButton" src="../Picture/startButton.png" width="250px" height="250px" style="visibility: hidden;" onclick="restart();"><!--Click start button to start the game-->
                 <div class="question" id="question_2"></div>
                 <div class="answer">
                     <div class="check_input">
@@ -49,7 +50,7 @@
                     <div class ="message" id="message_2"></div>
                 </div>
             </div>
-            <div class="line">
+            <div class="line"><!--Line 3-->
                 <div class="question" id="question_3" ></div>
                 <div class="answer">
                     <div class="check_input">
