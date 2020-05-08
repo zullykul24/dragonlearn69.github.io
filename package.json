@@ -1,0 +1,27 @@
+{
+  "name": "vscode",
+  "version": "1.0.0",
+  "description": "Bài tập nhóm môn Công nghệ phần mềm (Học kì 2 - 2019-2020) - Nhóm 69",
+  "main": "mytest.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^4.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zullykul24/dragonlearn_group69.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zullykul24/dragonlearn_group69/issues"
+  },
+  "homepage": "https://github.com/zullykul24/dragonlearn_group69#readme"
+}

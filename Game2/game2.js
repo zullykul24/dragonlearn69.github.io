@@ -19,67 +19,20 @@ let indexY=0;
 let check1_1=false;                   // [index câu hỏi 1]
 let check1_2=false;                   // [index câu hỏi 2]
 
-
-/*
 var canvas = document.getElementById("progressBar");        // tạo progress bar
 var ctx = canvas.getContext("2d");
 ctx.fillStyle = "#FF0000";
-*/
 
-let ballIndex=9;
-let addPoint=true;
-
-var pos = 0;
-
-function ballGoRight() {
-    var ele = document.getElementById("ball_"+ballIndex);
-    console.log("goi bong so"+ballIndex);
-    var id = setInterval(frame,1);
-    function frame() {
-        if(pos >= 560-30*10){
-            clearInterval(id);
-        }
-        else {
-
-            ele.style.left=pos + "px";
-            pos+=4;
-        }
-
+function start1() {
+    ctx.fillRect(0,0,560*(indexX/(questionVariable.length-1)),40);     // vẽ progress bar
+    ctx.strokeRect(0,0,560,40);
+    if(indexY===0) {
+        clearColumn1();
     }
-
-    ballIndex--;
-    pos = 0;
-
+    addColumn1(questionVariable[indexX][indexY]);
+    addQuestion1(questionVariable[indexX][indexY]);
+    movetoNextCursor("input1");
 }
-function ballGoLeft() {
-
-        ballIndex++;
-
-        var ele = document.getElementById("ball_" + ballIndex);
-
-        console.log("goi bong so" + ballIndex);
-        var id = setInterval(frame, 1);
-
-        function frame() {
-            if (pos == 0) {
-                clearInterval(id);
-            } else {
-                ele.style.left = pos + "px";
-                pos -= 4;
-            }
-        }
-
-        console.log("pos = " + pos);
-        // console.log(ele.offsetLeft);
-
-        pos = 560 - 30 * 10;
-
-}
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-// thuộc diện nghi vấn để làm gọn
 function addColumn1(number) {                                                    // thêm column theo number
     var indexAdded;
     if(indexY===0){
@@ -89,11 +42,11 @@ function addColumn1(number) {                                                   
         indexAdded=questionVariable[indexX][0];
     }
 
-
+    //  console.log("them truoc do: "+indexAdded);
     for(var a=0;a<number;a++) {
         var img = document.createElement("img");
         img.src = "https://i.ibb.co/4S5Yw11/block.png";
-
+        //     img.src = "../Picture/block";
         var src = document.getElementById("column");
 
 
@@ -101,81 +54,24 @@ function addColumn1(number) {                                                   
             img.style.marginLeft="10px";
         src.appendChild(img);
 
+
+
+        //  src[5].style.marginLeft="10px";
     }
 }
 
-function addColumn2(number) {
-    var src = document.getElementById("column2");
-    if(!src.hasChildNodes()) {
-        for (var a = 0; a < number; a++) {
-            var img = document.createElement("img");
-            img.src = "https://i.ibb.co/4S5Yw11/block.png";
-
-
-            if ((a % 5) === 0 && a !== 0)
-                img.style.marginLeft = "10px";
-            src.appendChild(img);
-
-
-        }
-    }
-}
-
-function unShowSuggestion1(){
-    document.getElementById("suggest1units").style.display="none";
-    document.getElementById("suggest1tens").style.display="none";
-}
-
-function unShowSuggestion2() {
-    document.getElementById("suggest2tens").style.display="none";
-    document.getElementById("suggest2units").style.display="none";
-    clearColumn("column2");
-}
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
 function clearColumn1() {                                            // xóa các column trên bản đồ
     var list = document.getElementById("column");
     while (list.hasChildNodes()){
         list.removeChild(list.firstChild);
     }
 }
-function clearColumn2() {                                            // xóa các column trên bản đồ
-    var list = document.getElementById("column2");
-    while (list.hasChildNodes()){
-        list.removeChild(list.firstChild);
-    }
-}
-*/
-function clearColumn(id) {                                            // xóa các column trên bản đồ
-    var list = document.getElementById(id);
-    while (list.hasChildNodes()){
-        list.removeChild(list.firstChild);
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-function start1() {
-/*    ctx.fillRect(0,0,560*(indexX/(questionVariable.length-1)),40);     // vẽ progress bar
-    ctx.strokeRect(0,0,560,40);
-*/
-    if(indexY===0) {
-        clearColumn("column");
-    }
-    addColumn1(questionVariable[indexX][indexY]);
-    addQuestion1(questionVariable[indexX][indexY]);
-    movetoNextCursor("input1");
-}
-
 
 function addQuestion1(number){                                   // thêm câu hỏi nhưng cái này đã làm trên file html
 
 }
 
 function showSuggestion1(index){
-    if(ballIndex<8 && addPoint===true ) {
-        ballGoLeft();
-
-    }/////////////////////////////////////////////////////////////////////////////////////////////////////////
     if(index===1){
         document.getElementById("suggest1units").style.display="none";
         document.getElementById("suggest1tens").style.display="block";
@@ -190,12 +86,13 @@ function showSuggestion1(index){
         document.getElementById("suggest1tens").style.display="none";
     }
 }
-
-
-
+function unShowSuggestion1(){
+    document.getElementById("suggest1units").style.display="none";
+    document.getElementById("suggest1tens").style.display="none";
+}
 
 async function checkQuestion1(index) {                                  // check đáp án đúng chưa, nếu đúng rồi thì next màn
-    let number;                                        // đáp án
+    let number;
     if (indexY === 0) {
         if (index === 1) {
             number = questionVariable[indexX][indexY];
@@ -209,8 +106,6 @@ async function checkQuestion1(index) {                                  // check
             number = (questionVariable[indexX][0] + questionVariable[indexX][1]) * 10;
         }
     }
-
-
     if (index === 1) {
         var answer1 = document.getElementById("input1").value;
         if (answer1 == number) {
@@ -221,10 +116,6 @@ async function checkQuestion1(index) {                                  // check
             if(answer1.length===number.toString().length){
                 console.log("chua dung 1");
                 showSuggestion1(index);
-
-
-                addPoint=false;
-
             }
 
             check1_1 = false;
@@ -239,9 +130,6 @@ async function checkQuestion1(index) {                                  // check
             if(answer2.length===number.toString().length){
                 console.log("chua dung 2");
                 showSuggestion1(index);
-
-                addPoint=false;
-
             }
 
             check1_2 = false;
@@ -258,49 +146,20 @@ async function checkQuestion1(index) {                                  // check
 }
 function next1(){                                                    // next màn
     if(indexX>3){
-
         next2();
     }
-
-
-    else
-
-    {
-
-
+    else {
         if (indexY === 1) {
             indexX++;
-            if(addPoint===true) {
-                ballGoRight();
-            }
             indexY = 0;
-            addPoint=true;
         }
         else if (indexY === 0) {
             indexY++;
         }
-
         if (questionVariable[indexX][indexY] === 0) {
             indexX++;
-            if(addPoint===true) {
-                ballGoRight();
-            }
             indexY = 0;
-            addPoint=true;
         }
-
-        console.log("ballIndex = "+ballIndex);
-
-        if(ballIndex===5) {
-            indexX=4;
-            start2();
-        }
-        if(indexX===4 && ballIndex!==5){
-            indexX=1;
-            indexY=0;
-            console.log("doi lai cau hoi");
-        }
-
         if(indexX<=3){
             start1();
         }
@@ -310,35 +169,10 @@ function next1(){                                                    // next mà
     }
 }
 
-function next2() {
-
-    indexX++;
-    if(addPoint===true) {
-        ballGoRight();
-    }
-
-
-    addPoint=true;
-
-    if(ballIndex===-1) victory();
-
-    if(isOutOfQuestion()){
-        if(ballIndex===-1)
-            victory();
-        else {
-            indexX=4;
-            start2();
-        }
-    }
-    else {
-
-        start2();
-    }
-}
 function start2() {
- /*   ctx.fillRect(0,0,560*(indexX/(questionVariable.length-1)),40);     // vẽ progress bar
+    ctx.fillRect(0,0,560*(indexX/(questionVariable.length-1)),40);     // vẽ progress bar
     ctx.strokeRect(0,0,560,40);
-*/
+
     if(indexX===4){
         deletePlatform1();
     }
@@ -363,6 +197,36 @@ function addQuestion2() {
 }
 
 
+
+
+
+
+
+
+function addColumn2(number) {
+    var src = document.getElementById("column2");
+    if(!src.hasChildNodes()) {
+        for (var a = 0; a < number; a++) {
+            var img = document.createElement("img");
+            img.src = "https://i.ibb.co/4S5Yw11/block.png";
+
+
+            if ((a % 5) === 0 && a !== 0)
+                img.style.marginLeft = "10px";
+            src.appendChild(img);
+
+
+        }
+    }
+}
+function clearColumn2() {                                            // xóa các column trên bản đồ
+    var list = document.getElementById("column2");
+    while (list.hasChildNodes()){
+        list.removeChild(list.firstChild);
+    }
+}
+
+
 async function checkQuestion2(index) {
     let number;
 
@@ -379,11 +243,6 @@ async function checkQuestion2(index) {
             if(number.toString().length===document.getElementById("inputTens").value.length){
                 console.log("sai roi dap an la " + number);
                 showSuggestion2(index);
-
-
-                addPoint=false;
-
-
             }
 
         }
@@ -402,9 +261,6 @@ async function checkQuestion2(index) {
             if(number.toString().length===document.getElementById("inputUnits").value.length){
                 console.log("sai roi dap an la " + number);
                 showSuggestion2(index);
-
-                addPoint=false;
-
             }
 
         }
@@ -412,11 +268,6 @@ async function checkQuestion2(index) {
 }
 
 function showSuggestion2(index) {
-
-    if(ballIndex<5 && addPoint===true ) {
-        ballGoLeft();
-
-    }///////////////////////////////////////////////////////////////////////////////////////////////////
     if(index === 'tens'){
         document.getElementById("suggest2tens").style.display="none";
         document.getElementById("suggest2units").style.display="block";
@@ -429,7 +280,11 @@ function showSuggestion2(index) {
     }
 }
 
-
+function unShowSuggestion2() {
+    document.getElementById("suggest2tens").style.display="none";
+    document.getElementById("suggest2units").style.display="none";
+    clearColumn2();
+}
 
 
 
@@ -457,7 +312,20 @@ function movetoNextCursor( nextFieldID) {
         document.getElementById(nextFieldID).focus();
 
 }
+function next2() {
+    console.log(indexX);
+    indexX++;
 
+
+
+    if(isOutOfQuestion()){
+        victory();
+    }
+    else {
+
+        start2();
+    }
+}
 
 function isOutOfQuestion(index){                                    // chuyển sang màn hình victory nhưng chưa làm
     if(indexX>=questionVariable.length)
@@ -470,20 +338,12 @@ function victory() {
     window.location.replace("../victory.html");
 }
 
-function firstStart() {
-    document.getElementById("startSpace").style.display="none";
-    document.getElementById("content").style.display="block";
-
-    start1();
-
-
-
-}
 
 
 
 
 
-        //start1();                                                        // start1 trước
+
+start1();                                                        // start1 trước
 
 
