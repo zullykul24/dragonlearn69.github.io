@@ -368,16 +368,5 @@ function startButton(){
 }
 
 //// Write test cases
-describe("Kiểm tra kết quả", function(){
-    
-   //check_3(0);
-  // var message_3 = document.getElementById("message_3");
-    it("Điểm ban đầu là 0", function(){
-      expect(point).toBe(0);
 
-    });
-   // it("Kết quả sai", function(){
-  //      expect(message_3.innerHTML).toBe("Wrong answer");
-   // });
-  });
         
