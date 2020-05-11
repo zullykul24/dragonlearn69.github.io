@@ -5,7 +5,6 @@ describe('Game 1 Test', () => {
         cy.visit('https://zullykul24.github.io/dragonlearn69.github.io/Game1/game1.html');
         cy.wait(500)
         cy.get('#startButton').click();
-      
     })
     it('Should uses', () => {
         cy.get('#next_link').should('be.hidden')
@@ -22,15 +21,10 @@ describe('Game 1 Test', () => {
         cy.get('#message_2').should('contain', 'Wrong answer')
         cy.wait(1000)
 
-       
         cy.get('#submit_3').click(); // if not answer
         cy.get('#message_3').should('contain', 'Write your answer')
         cy.wait(1000)
-
-
     })
-
-
     it('Back to menu', () => {
         cy.get('#backButton').click();
       
