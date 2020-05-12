@@ -29,7 +29,7 @@ var question3_arr = [
             "8 tens and 4 hundreds:"
             ];
 
-function check_1(x)    // Check the first answer
+/*function check_1(x)    // Check the first answer
 {
     var input_1 = document.getElementById("input_1"); 
     var message_1 = document.getElementById("message_1");
@@ -109,6 +109,36 @@ function check_3(x) //Check the third answer
     {
         message_3.innerHTML = "Wrong answer";
         message_3.style.color = "red";
+        if(check_subPoint == 0 && rightBalls != 0)subPoint();
+        check_subPoint++;
+    }
+}*/
+function check_result(x, index){
+    var input = document.getElementById("input_"+ index);
+    var message = document.getElementById("message_" + index);
+    var submit = document.getElementById("submit_"+ index);
+    if(input.value == x)
+    {
+        message.innerHTML = "Excellent!"; 
+        message.style.color = "blue";
+        trueAnswer++;
+        if(input_1.value == "")input_1.focus();
+        else if(input_2.value == "")input_2.focus();
+        else if(input_3.value == "")input_3.focus();
+        
+
+        input.disabled = true;
+        submit.disabled = true;
+    }
+    else if(input.value == "")
+    {
+        message.innerHTML = "Write your answer";
+        message.style.color = "red";
+    }
+    else
+    {
+        message.innerHTML = "Wrong answer";
+        message.style.color = "red";
         if(check_subPoint == 0 && rightBalls != 0)subPoint();
         check_subPoint++;
     }
