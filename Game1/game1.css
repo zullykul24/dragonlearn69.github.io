@@ -31,6 +31,38 @@ body {
     font-family: sans-serif;
     background-color: #ffffff;
 }
+
+#backButton {
+    font-size: 18px;
+    color: rgb(39, 125, 175);
+    text-decoration: none;
+}
+
+.back .arrow-left {
+    top: -2px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #246EA1 ;
+    position: relative;
+    border-radius: 50%;
+}
+
+.back .arrow-left::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -18px;
+    top: -15px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid white;
+}
+
 .rightbar {
     height: 49px;
     float: left;
