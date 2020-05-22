@@ -38,12 +38,22 @@ body {
     border-right: 15px solid white;
 }
 
+.progress {
+    padding-top: 3px ;
+    height: 23px;
+    width: 560px;
+    margin-left: 100px;
+    margin-top: 5px;
+    background-color: #f1dede;
+    position: relative;
+    border-radius: 10px;
+}
 .ball{
-    width: 30px;
-    height: 40px;
+    width: 21px;
+    height: 21px;
     float: left;
     position: relative;
-    background: url("../Picture/ball3D.png");
+    background: url("../Picture/ball.png");
 }
 .columnSpace{
     height: 400px;
@@ -113,9 +123,9 @@ div.units{
 input{
     color: transparent;
     text-shadow: 0 0 0 black;
-    &:focus {
-     outline: none;
-    }
+    /*&:focus {*/
+    /* outline: none;*/
+    /*}*/
 }
 input.inputBox1{
     type: text;
@@ -176,13 +186,4 @@ input.inputBox2{
     width: 100px;
     background-color: white;
     border-top-right-radius: 15px;
-}
-.progress {
-    height: 40px;
-    width: 560px;
-    margin-left: 100px;
-    margin-top: 5px;
-    background-color: #ededed;
-    position: relative;
-    border-radius: 5px;
 }
