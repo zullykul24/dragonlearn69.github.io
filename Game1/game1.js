@@ -121,7 +121,7 @@ function check_result(x, index){
     {
         message.innerHTML = "Excellent!"; 
         message.style.color = "blue";
-        trueAnswer++;
+        trueAnswer+=1;
         if(input_1.value == "")input_1.focus();
         else if(input_2.value == "")input_2.focus();
         else if(input_3.value == "")input_3.focus();
@@ -129,6 +129,7 @@ function check_result(x, index){
 
         input.disabled = true;
         submit.disabled = true;
+        commit();
     }
     else if(input.value == "")
     {
@@ -140,7 +141,7 @@ function check_result(x, index){
         message.innerHTML = "Wrong answer";
         message.style.color = "red";
         if(check_subPoint == 0 && rightBalls != 0)subPoint();
-        check_subPoint++;
+        check_subPoint+=1;
     }
 }
 function next()
@@ -153,6 +154,8 @@ function next()
     }  //New 3 questions with blank inputs and they're unchecked.
     else
     { 
+        var line = document.getElementsByClassName("line");
+        var cap = document.getElementById("caption");
         var input_1 = document.getElementById("input_1");
         var input_2 = document.getElementById("input_2");
         var input_3 = document.getElementById("input_3");
@@ -177,6 +180,11 @@ function next()
         message_3.innerHTML = "";
         check_subPoint = 0 ;
 
+        for(var i = 0; i < line.length; i++){
+            line[i].style.opacity = "1";
+        }
+        cap.style.opacity = "1";
+
         var inputs = document.getElementsByClassName("input");
         for(i = 0;i < inputs.length; i++){inputs[i].disabled = false;} //enable inputs
 
@@ -191,18 +199,28 @@ function next()
         question_1.innerHTML = question1_arr[lesson+1];
         question_2.innerHTML = question2_arr[lesson+1];
         question_3.innerHTML = question3_arr[lesson+1];
-        lesson++;
+        lesson+=1;
     }
 }
 function commit()
 {  //When u give 3 true answers, the Next button appears 
     var next_link = document.getElementById("next_link");
+    var cap = document.getElementById("caption");
+    var line = document.getElementsByClassName("line");
     if(trueAnswer == 3 && lesson < numberOfLessons - 1)
     { //Change to - 1 when finish
         if(check_subPoint == 0){addPoint();check_subPoint++;}
-        next_link.style.visibility = "visible";
-        next_link.innerHTML = "Next";
+        setTimeout(function(){
+            for(var i = 0; i < line.length; i++){
+                line[i].style.opacity = "0";
+            }
+            cap.style.opacity = "0";
+            setTimeout(function(){
+                next();
+            },1000);
+        },1000);
         trueAnswer = 0;
+        
     }
     if(lesson == (numberOfLessons - 1) && trueAnswer == 3)
     { // Finish all questions of lessons // Change to -1 
@@ -273,9 +291,6 @@ function finish_screen()
     var question_2 = document.getElementById("question_2");
     var question_3 = document.getElementById("question_3");
 
-    var lines = document.getElementsByClassName("line");
-
-
     cap.innerHTML = "You've completed the game! Congratulations!" ;
     cap.style = "font-size: 30px";
 
@@ -294,7 +309,7 @@ function finish_screen()
     next_link.innerHTML = ""; // Next button disappears 
     next_link.style.display = "none";
 
-}
+}   
 function restart()
 {
     //reset the variables;
@@ -304,13 +319,7 @@ function restart()
     rightBalls = 0;
 
     var cap = document.getElementById("caption");
-    cap.hidden = false;
     cap.innerHTML = "Type the number which has" ;
-    cap.style = "width: 960px; position: relative; height: 70px; text-align: center; line-height: 69px; font-size: 50px;";
-
-    var questions = document.getElementsByClassName("question");
-    for(i = 0; i < questions.length ;i++){questions[i].style = "float: left;width: 500px;height: 140px;"; } 
-
     var answer = document.getElementsByClassName("answer");
     for(i = 0;i < answer.length; i++){answer[i].style.display = "block";}
 
@@ -374,7 +383,6 @@ function restart()
 
 }
 function startButton(){
-    var cap = document.getElementById("caption");
     var img = document.getElementById("startButton");
 
     var answer = document.getElementsByClassName("answer");
@@ -387,11 +395,7 @@ function startButton(){
     question_1.hidden = true;
     question_2.hidden = true;
     question_3.hidden = true;
-
-    cap.hidden = true;
     img.hidden = false;
-    img.style = "z-index: 1; margin-left: 345px; cursor: pointer;";
-    question_2.style = "width: 400px";
 
     while(point > 0)subPoint();// reset the balls and points
 
