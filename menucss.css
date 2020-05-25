@@ -1,44 +1,190 @@
-#header {
-    text-align: center;
-    height: 100px;
-    position: relative;
-    max-width: 100%;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+.banner-wrapper{
+    height: 97px;
     width: 100%;
-    
-    
+    background-color: #5BBBE4;
+    z-index: 100;
 }
-img {
-    height: 70%;
-    width: 70%;
+.banner-wrapper--block{
+    width: 1024px;
+    height: 100%;
+    margin: auto;
+    background: url('Picture/banner.svg') no-repeat -340px center;
+    background-size: auto 97px;
 }
-p {
-    font-size: 30px;
+.header{
+    min-width: 1024px;
+    height: 50px;
+    background-color: #eee;
+    border-bottom: 1px solid #D8D8D8;
+}
+.header--container{
+    height: 100%;
+    width: 1024px;
+    margin: auto;
+    padding: 0 18px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+.header--logo{
+    height: 100%;
+    width: 200px;
+}
+.header--logo a{
+    display: inline-block;
+    width: 160px;
+    height: 100%;
+    background: url('Picture/header_logo.svg') center no-repeat;
+}
+.header--nav-item{
+    margin-right: 28px;
+    font-size: 17px;
+    color: #707c81;
+    font-weight: bold;
+    line-height: 50px;
+    transition: color 0.2s ease-out;
+    letter-spacing: 0.6px;
+
+}
+.header--nav-item:hover {
+    color: #FF5D6A;
+    text-decoration: none;
+}
+.header--right{
+    width: 191px;
+}
+.header--right-invite a{
+    display: inline-block;
+    height: 40px;
+    width: 105px;
+    box-sizing: border-box;
+    line-height: 14px;
+    padding: 5px 0 4px 0;
+    font-size: 13px;
+    color: #FF5D6A;
+    text-align: center;
+    border: 1px solid #FF5D6A;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+
+}
+.header--right-invite a:hover {
+    color: rgb(247, 55, 71);
+    text-decoration: none;
+}
+.header--right-profile{
+    font-size: 13px;
+    color: #707c81;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    padding: 0 20px 2px 0;
+    margin: auto;
+    line-height: 14px;
+}
+
+/* main */
+.main{
+    min-width: 1024px;
+    padding: 20px 0 0 0;
+}
+.main--containner{
+    width: 1024px;
+    margin: auto;
+    padding: 0 18px;
+}
+.program-menu{
+    width: 270px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+.program-menu--item{
+    height: 60px;
+    padding: 0 10px 0 16px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    line-height: 60px;
+}
+
+.back-btn-block:hover {
+    text-decoration: none;
+}
+.back-btn-block{
+    display: inline-block;
+    color: #707c81;
+    margin: 15px 0 28px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
+}
+.back-btn-block i{
+    color: #FF5D6A;
+    font-size: 24px;
+    margin: 8px;
+    vertical-align: middle;
+}
+.bread-crumb{
+    margin: 23px 0;
+}
+.bread-crumb--item{
+    color: black;
+    font-size: 13px;
+}
+.bread-crumb--separator{
+    margin: 0 10px;
+    font-size: 13px;
+}
+.lesson-title{
+    font-size: 22px;
+    color: black;
+    margin: 10px 25px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.4px;
 }
 #content {
     float: left;
-   height: 700px;
-   
-}
-a:hover {
-    color: red;
+    height: 700px;
+
 }
 #icon1 {
     float: left;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     max-width: 100%;
     height: auto;
     position: absolute;
-    margin-left: 200px;
+    margin-left: 100px;
 
 }
 #icon2 {
     float: left;
-    margin-left: 700px;
+    margin-left: 500px;
     position: absolute;
     max-width: 100%;
     height: auto;
-    width: 500px;
-    height: 500px;
-  
+    width: 400px;
+    height: 400px;
+
+}
+.lesson-card-item--title{
+    padding: 0 5px 0 0;
+    margin-top: 15px;
+    line-height: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.lesson-card-item--title:hover {
+    color: #FF5D6A;
 }
