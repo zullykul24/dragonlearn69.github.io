@@ -180,16 +180,16 @@ function next()
         message_3.innerHTML = "";
         check_subPoint = 0 ;
 
-        for(var i = 0; i < line.length; i++){
+        for(let i = 0; i < line.length; i++){
             line[i].style.opacity = "1";
         }
         cap.style.opacity = "1";
 
         var inputs = document.getElementsByClassName("input");
-        for(i = 0;i < inputs.length; i++){inputs[i].disabled = false;} //enable inputs
+        for(let i = 0;i < inputs.length; i++){inputs[i].disabled = false;} //enable inputs
 
         var submits = document.getElementsByClassName("submit");
-        for(i = 0;i < submits.length; i++){submits[i].disabled = false;} //enable submits
+        for(let i = 0;i < submits.length; i++){submits[i].disabled = false;} //enable submits
  
         var next_link = document.getElementById("next_link");
 
@@ -211,7 +211,7 @@ function commit()
     { //Change to - 1 when finish
         if(check_subPoint == 0){addPoint();check_subPoint++;}
         setTimeout(function(){
-            for(var i = 0; i < line.length; i++){
+            for(let  i = 0; i < line.length; i++){
                 line[i].style.opacity = "0";
             }
             cap.style.opacity = "0";
@@ -284,7 +284,7 @@ function finish_screen()
     var cap = document.getElementById("caption");
 
     var answer = document.getElementsByClassName("answer");
-    for(i = 0;i < answer.length; i++){answer[i].style.display = "none";}
+    for(let i = 0;i < answer.length; i++){answer[i].style.display = "none";}
 
 
     var question_1 = document.getElementById("question_1");
@@ -321,7 +321,7 @@ function restart()
     var cap = document.getElementById("caption");
     cap.innerHTML = "Type the number which has" ;
     var answer = document.getElementsByClassName("answer");
-    for(i = 0;i < answer.length; i++){answer[i].style.display = "block";}
+    for( let i = 0;i < answer.length; i++){answer[i].style.display = "block";}
 
     var input_1 = document.getElementById("input_1");
     var input_2 = document.getElementById("input_2");
@@ -343,10 +343,10 @@ function restart()
     var message_3 = document.getElementById("message_3");
 
     var inputs = document.getElementsByClassName("input");
-    for(i = 0;i < inputs.length; i++){inputs[i].disabled = false;} //enable inputs
+    for(let i = 0;i < inputs.length; i++){inputs[i].disabled = false;} //enable inputs
 
     var submits = document.getElementsByClassName("submit");
-    for(i = 0;i < submits.length; i++){submits[i].disabled = false;} //enable submits
+    for(let i = 0;i < submits.length; i++){submits[i].disabled = false;} //enable submits
 
 
 
@@ -386,7 +386,7 @@ function startButton(){
     var img = document.getElementById("startButton");
 
     var answer = document.getElementsByClassName("answer");
-    for(i = 0;i < answer.length; i++){answer[i].style.display = "none";}
+    for( let i = 0;i < answer.length; i++){answer[i].style.display = "none";}
 
 
     var question_1 = document.getElementById("question_1");

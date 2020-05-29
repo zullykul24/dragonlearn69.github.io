@@ -128,16 +128,12 @@ input{
     /*}*/
 }
 input.inputBox1{
-    type: text;
-    value: '';
     width: 50px;
     height: 30px;
     font-size: 30px;
     text-align: center;
 }
 input.inputBox2{
-    type: text;
-    value: '';
     width: 35px;
     height: 30px;
     font-size: 30px;
