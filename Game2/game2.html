@@ -42,7 +42,7 @@
 
     <div id="startSpace" class="startSpace"  >
 
-        <img id="start" src="../Picture/startButton.png" onclick="firstStart()" style="margin-left: 300px;margin-top: 90px;cursor: pointer">
+        <img id="start" src="../Picture/startButton.png" alt ="" onclick="firstStart()" style="margin-left: 300px;margin-top: 90px;cursor: pointer">
 
     </div>
 
@@ -61,10 +61,10 @@
             <div id="question1" class="question1" >
 
                 <p>
-                    Here there are <input class="inputBox2" id="input1" oninput="checkQuestion1(1)"   maxlength="2"> tens -
+                    Here there are <input class="inputBox2" id="input1" type="text" oninput="checkQuestion1(1)"   maxlength="2" value="" onkeypress='return event.charCode >= 48 && event.charCode <= 57'> tens -
                 </p>
                 <p>
-                    which is the same as <input class="inputBox1" id="input2" oninput="checkQuestion1(2)" maxlength="3"> units
+                    which is the same as <input class="inputBox1" id="input2" oninput="checkQuestion1(2)" maxlength="3" type="text" value="" onkeypress='return event.charCode >= 48 && event.charCode <= 57'> units
                 </p>
                 <!-- tạo câu hỏi -->
             </div>

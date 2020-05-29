@@ -80,7 +80,7 @@ function ballGoLeft() {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // thuộc diện nghi vấn để làm gọn
-function addColumn1(number) {                                                    // thêm column theo number
+function addColumn1(number) {                                                   // thêm column theo number
     var indexAdded;
     if(indexY===0){
         indexAdded=0;
@@ -90,7 +90,7 @@ function addColumn1(number) {                                                   
     }
 
 
-    for(var a=0;a<number;a++) {
+    for(let a=0;a<number;a++) {
         var img = document.createElement("img");
         img.src = "https://i.ibb.co/4S5Yw11/block.png";
 
@@ -195,7 +195,7 @@ function showSuggestion1(index){
 
 
 async function checkQuestion1(index) {                                  // check đáp án đúng chưa, nếu đúng rồi thì next màn
-    let number;                                        // đáp án
+    let number;                  // đáp án
     if (indexY === 0) {
         if (index === 1) {
             number = questionVariable[indexX][indexY];

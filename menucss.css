@@ -160,7 +160,6 @@
     width: 400px;
     height: 400px;
     max-width: 100%;
-    height: auto;
     position: absolute;
     margin-left: 100px;
 
@@ -170,7 +169,6 @@
     margin-left: 500px;
     position: absolute;
     max-width: 100%;
-    height: auto;
     width: 400px;
     height: 400px;
 

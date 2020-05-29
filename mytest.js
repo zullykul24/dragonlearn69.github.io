@@ -30,7 +30,7 @@ describe("Cộng điểm", function() {
     });
     it("Tăng 5 điểm", function() {
       var n = new Game();
-      for(var i = 0;i<5;i++)n.addPoint();
+      for(let i = 0;i<5;i++)n.addPoint();
       expect(n.point).toBe(5);
     });
     
@@ -66,7 +66,7 @@ describe("Cộng điểm", function() {
       });
       it("Tăng 3 điểm", function() {
         var n = new Game();
-        for(var i = 0;i<3;i++)n.subPoint();
+        for(let i = 0;i<3;i++)n.subPoint();
         expect(n.point).toBe(2);
       });
       
@@ -77,7 +77,7 @@ describe("Hàm kiểm tra đáp án", function () {
    this.check = function(number, index){
      this.input = this.numbers1_arr[index];
      if(this.input == number)return true;
-     else return false;
+     return false;
    }
  }
  it("Kiểm tra đầu vào đầu tiên", function () {
