@@ -2,7 +2,8 @@ body {
     background: url("../Picture/numbers.jpg") repeat;
     font-family: sans-serif;
 }
-.startSpace{
+
+.startSpace {
     height: 550px;
     width: 960px;
 }
@@ -21,7 +22,7 @@ body {
     height: 0;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid #246EA1 ;
+    border-right: 15px solid #246EA1;
     position: relative;
     border-radius: 50%;
 }
@@ -39,7 +40,7 @@ body {
 }
 
 .progress {
-    padding-top: 3px ;
+    padding-top: 3px;
     height: 23px;
     width: 560px;
     margin-left: 100px;
@@ -48,60 +49,71 @@ body {
     position: relative;
     border-radius: 10px;
 }
-.ball{
+
+.ball {
     width: 21px;
     height: 21px;
     float: left;
     position: relative;
     background: url("../Picture/ball.png");
 }
-.columnSpace{
+
+.columnSpace {
     height: 400px;
     width: 480px;
     float: left;
 }
-.column{
+
+.column {
     margin-top: 100px;
     margin-left: 50px;
 }
-.question1Space{
-     float: right;
-     height: 550px;
-     width: 480px;
-     text-align: left;
-     font-size: 30px;
- }
-.question1{
-     margin-top: 100px;
- }
-.suggest1Space{
+
+.question1Space {
+    float: right;
+    height: 550px;
+    width: 480px;
+    text-align: left;
+    font-size: 30px;
+}
+
+.question1 {
+    margin-top: 100px;
+}
+
+.suggest1Space {
     height: 150px;
     width: 480px;
     float: left;
 }
-.suggest1{
+
+.suggest1 {
     margin-left: 20px;
     margin-right: 20px;
     font-size: 30px;
     text-align: center;
     background-color: #f0f1ba;
 }
-div.tens1{
+
+div.tens1 {
     display: inline;
 }
-.question2Space{
+
+.question2Space {
     height: 200px;
-    width:  960px;
+    width: 960px;
     text-align: center;
     float: left;
     font-size: 30px;
 }
-.suggest2Space{
-     height: 350px;
-     width: 300px;
-     float: left;
- }
-.suggest2{
+
+.suggest2Space {
+    height: 350px;
+    width: 300px;
+    float: left;
+}
+
+.suggest2 {
     margin-left: 40px;
     margin-right: 40px;
     padding: 30px;
@@ -109,41 +121,48 @@ div.tens1{
     text-align: center;
     background-color: #f0f1ba;
 }
-.column2Space{
+
+.column2Space {
     height: 350px;
     width: 660px;
     float: right;
 }
-div.tens{
+
+div.tens {
     display: inline;
 }
-div.units{
+
+div.units {
     display: inline;
 }
-input{
+
+input {
     color: transparent;
     text-shadow: 0 0 0 black;
     /*&:focus {*/
     /* outline: none;*/
     /*}*/
 }
-input.inputBox1{
-    type: text;
-    value: '';
+
+input.inputBox1 {
+    /* type: text; */
+    /* value: ''; */
     width: 50px;
     height: 30px;
     font-size: 30px;
     text-align: center;
 }
-input.inputBox2{
-    type: text;
-    value: '';
+
+input.inputBox2 {
+    /* type: text; */
+    /* value: ''; */
     width: 35px;
     height: 30px;
     font-size: 30px;
     text-align: center;
 }
-.content{
+
+.content {
     height: 550px;
     width: 960px;
     position: relative;
@@ -158,13 +177,15 @@ input.inputBox2{
     border-radius: 15px;
     background: #ffffff;
 }
+
 .headBox {
-    border-radius: 15px 15px 0px 0px  ;
+    border-radius: 15px 15px 0px 0px;
     background: rgb(12, 36, 87);
     height: 48px;
     line-height: 48px;
     position: relative;
 }
+
 .back {
     height: 49px;
     width: 100px;
@@ -174,12 +195,14 @@ input.inputBox2{
     font-family: sans-serif;
     background-color: #ffffff;
 }
+
 .rightBar {
     height: 49px;
     float: left;
-    background-color:#ffffff;
+    background-color: #ffffff;
     width: 760px;
 }
+
 .next {
     height: 49px;
     float: left;
