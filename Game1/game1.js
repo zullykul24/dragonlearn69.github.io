@@ -247,7 +247,7 @@ function addPoint()
     var id = setInterval(frame, 5); //set higher to see balls move more slowly
     function frame()
     {
-        if (pos == 360)
+        if (pos == 450)
         { // 560 - 40*5 = progressWidth - numberOfBalls * ballWidth
             clearInterval(id);
         }else 
@@ -276,7 +276,7 @@ function subPoint()
         }
     }
     point--;
-    pos = 360;
+    pos = 450;
 }
     /// finish screen
 function finish_screen()

@@ -36,7 +36,7 @@ function ballGoRight() {
     console.log("goi bong so"+ballIndex);
     var id = setInterval(frame,1);
     function frame() {
-        if(pos >= 560-30*10){
+        if(pos >= 560-21*10){
             clearInterval(id);
         }
         else {
@@ -72,7 +72,7 @@ function ballGoLeft() {
         console.log("pos = " + pos);
         // console.log(ele.offsetLeft);
 
-        pos = 560 - 30 * 10;
+        pos = 560 - 21 * 10;
 
 }
 
