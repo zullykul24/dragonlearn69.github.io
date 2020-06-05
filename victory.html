@@ -6,9 +6,46 @@
 
 </head>
 <body>
-<img src="Picture/Victory.png" style="margin-left: 150px">
-
-<a href="menu.html"><img src="Picture/back_to_lesson.png" style="margin-top: 50px;margin-left: 650px"></a>
-
+    <div class="complete">
+        <div class="complete-text">Well done! You completed the card!</div>
+        <div class="complete-image"></div>
+        <div class="complete-button">
+            <a href="menu.html">Go to lesson</a>
+        </div>
+    </div>
+    <style>
+        .complete {
+        padding: 30px;
+        margin-top: 95px;
+    }
+    .complete-text {
+        font-size: 32px;
+        line-height: 32px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #000000;
+    }
+    .complete-image {
+        height: 290px;
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-image: url("Picture/h_victory.png");
+    }
+    .complete-button {
+        text-align: center;
+    }
+    .complete-button a {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 29px;
+        text-decoration: none;
+        background: #66c3e6;
+        color: white;
+        display: inline-block;
+        padding: 12px 20px 8px;
+        border-radius: 7px;
+        }
+    </style>
 </body>
 </html>
